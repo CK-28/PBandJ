@@ -1,7 +1,7 @@
-import 'package:app/SearchPage/GameWidget.dart';
+import 'package:app/data/GameWidget.dart';
 import 'package:app/data/GamesParser.dart';
 import 'package:flutter/material.dart';
-
+import 'SearchPage/SearchPage.dart';
 import 'data/Game.dart';
 
 void main() {
@@ -101,6 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // horizontal).
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              TextButton(onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context)=> SearchPage(),
+                  )
+                )
+              }, child: Text("search")),
               // Sample Game Objects delete whenever thi
               GameWidget(game: games[74], isSmall: false),
               GameWidget(game: games[0], isSmall: true),
