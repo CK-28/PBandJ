@@ -4,7 +4,7 @@ class Game {
   final int id;
   final String name;
   final double? rating;
-  final int ageRating; //need parsed to a string of which rating but will do later
+  final int ageRating;
   final String? image;
   final String? imageId;
   final String summary;
@@ -26,6 +26,41 @@ class Game {
     required this.companies,
     required this.platforms,
   });
+
+
+  String developer() {
+    return companies.where((company) => company.developer).first.name;
+  }
+
+  List<String> tags () {
+    var tags = <String>[];
+    tags.add("Rated: ${stringAgeRating()}");
+    genres.forEach((genre) => tags.add(genre.name));
+    platforms.forEach((platform) =>  tags.add(platform.shortestName()));
+
+    return tags;
+  }
+
+  String stringAgeRating() {
+    switch(ageRating) {
+      case 6:
+        return "RP";
+      case 7:
+        return "EC";
+      case 8:
+        return "E";
+      case 9:
+        return "E10";
+      case 10:
+        return "T";
+      case 11:
+        return "M";
+      case 12:
+        return "AO";
+      default:
+        return "N/A";
+    }
+  }
 
 
   /**
@@ -107,6 +142,11 @@ class Platform {
   final int id;
   final String? abbr;
   final String name;
+
+  String shortestName() {
+
+    return (abbr == null)? name: abbr!;
+  }
 
   Platform({required this.id, required this.name, required this.abbr});
 
