@@ -19,21 +19,19 @@ class GameGrid extends StatelessWidget {
                     )
                 ),
                 SizedBox(
-                    height: 200,
+                    height: 300,
                     child: GridView.builder(
+                        scrollDirection: Axis.horizontal,
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                         ),
-                        itemCount: 4,
+                        itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                                height: 10,
-                                child: Card(
-                                    color: Colors.amber,
-                                    child: Center(
-                                        child: Text('$index')
-                                    ),
-                                )
+                            return Card(
+                                color: Colors.amber,
+                                child: Center(
+                                    child: Text('$index')
+                                ),
                             );
                         }
                     )
