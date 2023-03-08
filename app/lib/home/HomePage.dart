@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import './PlayingGrid.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text("Home page");
+    return ListView(
+        children: [
+            PlayingGrid(),
+            Text("Backlog"),
+            Text("Ongoing")
+        ]
+    );
   }
 }
