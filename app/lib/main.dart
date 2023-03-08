@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './models/GameModel.dart';
-import './home/MainScaffold.dart';
+import './MainScaffold.dart';
 
 void main() {
   runApp(const MyApp());
