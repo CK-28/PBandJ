@@ -1,5 +1,5 @@
 
-// import 'package:app/SearchPage/SearchFieldWidget.dart';
+import 'package:app/SearchPage/SearchFieldWidget.dart';
 import 'package:app/SearchPage/SearchGamesListWidget.dart';
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
@@ -25,7 +25,7 @@ class SearchPageState extends State<SearchPage> {
       body: Center(
           child:Column(
           children: [
-            // SearchFieldWidget(), //Search section
+            SearchFieldWidget(), //Search section
             SearchGamesListWidget(games: games),
           ],
         )
