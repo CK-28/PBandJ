@@ -6,6 +6,7 @@ class Game {
   final double? rating;
   final int ageRating; //need parsed to a string of which rating but will do later
   final String? image;
+  final String? imageId;
   final String summary;
   final DateTime release;
   final List<Genre> genres;
@@ -16,6 +17,7 @@ class Game {
     required this.id,
     required this.name,
     required this.image,
+    required this.imageId,
     required this.ageRating,
     required this.rating,
     required this.summary,
@@ -24,6 +26,28 @@ class Game {
     required this.companies,
     required this.platforms,
   });
+
+
+  /**
+   * sizes are as follows:
+   *
+   * cover_small
+   * screenshot_med
+   * cover_big
+   * logo_mid
+   * screenshot_big
+   * screenshot_huge
+   * thumb
+   * micro
+   * 720p
+   * 1080p
+   *
+   *
+   *
+   */
+  String getImageFromId(String size) {
+    return "http://images.igdb.com/igdb/image/upload/t_$size/$imageId.jpg";
+  }
 
   factory Game.fromJson(Map<String, dynamic> json) {
 
@@ -38,6 +62,7 @@ class Game {
         id: json['id'],
         name: json["name"],
         image: json["cover"]["url"],
+        imageId: json["cover"]["image_id"],
         summary: json["summary"],
         rating: json["aggregated_rating"],
         ageRating: ageRating,
