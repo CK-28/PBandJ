@@ -1,6 +1,7 @@
+import 'package:app/data/GameWidget.dart';
+import 'package:app/data/GamesParser.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import './models/GameModel.dart';
 import './MainScaffold.dart';
 
@@ -48,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  List<Game> games = gamesParser();
 
   void _incrementCounter() {
     setState(() {
