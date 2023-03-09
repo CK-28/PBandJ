@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import './models/GameModel.dart';
 import './MainScaffold.dart';
 
+import 'package:app/GamePage/GamePage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: MainScaffold(),
+          home: GamePage(),
           // const MyHomePage(title: 'Flutter Demo Home Page'),
         ),
     );
