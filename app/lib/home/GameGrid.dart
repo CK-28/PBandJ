@@ -1,3 +1,7 @@
+/*
+  Grid of two rows of games
+*/
+
 import 'package:flutter/material.dart';
 import '../data/GridGameWidget.dart';
 import '../data/Game.dart';
@@ -19,7 +23,7 @@ class GameGrid extends StatelessWidget {
             children: [
                 Text(heading,
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                     )
                 ),
@@ -28,11 +32,11 @@ class GameGrid extends StatelessWidget {
                     child: GridView.builder(
                         scrollDirection: Axis.horizontal,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: MediaQuery.of(context).size.width /
-                                              (MediaQuery.of(context).size.height),
+                            crossAxisCount: 1,
+                            crossAxisSpacing: 5,
+                            childAspectRatio: (5/4),
                         ),
-                        itemCount: 10,
+                        itemCount: 20,
                         itemBuilder: (BuildContext context, int index) {
                             return GridGameWidget(
                               game: games[index],
