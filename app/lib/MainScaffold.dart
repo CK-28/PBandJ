@@ -21,13 +21,10 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
         switch (_selectedIndex) {
             case 0:
                 return(HomePage());
-                break;
             case 1:
                 return(Text("Browse page"));
-                break;
             case 2:
                 return(Text("Profile page"));
-                break;
             default:
                 return(Text("Something has gone very wrong"));
         }
@@ -37,10 +34,14 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     Widget build(BuildContext context) {
         return Scaffold(
         appBar: AppBar(
-            title: Text("PB & J"),
+            backgroundColor: Color(0xFFCE9164),
+            title: Text("PB & J", style: TextStyle(
+              // color: Color(0xFFEC4686),
+            ),),
         ),
         body: _loadContent(),
         bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Color(0xFFEC4686),
             items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
@@ -56,7 +57,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
             ),
             ],
             currentIndex: _selectedIndex,
-            selectedItemColor: Colors.blue,
+            selectedItemColor: Color(0xFFFFFFFF),
             onTap: _onItemTapped,
         ),
         );

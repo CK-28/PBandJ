@@ -28,22 +28,25 @@ class GameGrid extends StatelessWidget {
                     )
                 ),
                 Container(
+                    // color: Color(0xFFEF6F0CC),
                     height: 200,
-                    child: GridView.builder(
-                        scrollDirection: Axis.horizontal,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1,
-                            crossAxisSpacing: 5,
-                            childAspectRatio: (5/4),
-                        ),
-                        itemCount: 20,
-                        itemBuilder: (BuildContext context, int index) {
-                            return GridGameWidget(
-                              game: games[index],
-                            );
-                        }
-                    )
-                )
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.0),
+                      child: GridView.builder(
+                          scrollDirection: Axis.horizontal,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              childAspectRatio: (5/4),
+                          ),
+                          itemCount: 20,
+                          itemBuilder: (BuildContext context, int index) {
+                              return GridGameWidget(
+                                game: games[index],
+                              );
+                          }
+                      )
+                    ),
+                  )
             ]
         );
     }
