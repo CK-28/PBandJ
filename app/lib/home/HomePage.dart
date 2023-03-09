@@ -3,6 +3,8 @@ import '../data/Game.dart';
 import '../data/GamesParser.dart';
 import 'GameGrid.dart';
 
+import '../GamePage/GamePage.dart';
+
 class HomePage extends StatelessWidget {
   List<Game> games = gamesParser();
 
@@ -25,6 +27,14 @@ class HomePage extends StatelessWidget {
                 heading: "Ongoing",
                 games: games,
             ),
+            ElevatedButton(
+                child: Text("Game Page >"),
+                onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => GamePage()
+                    ));
+                },
+            )
         ]
       )
     );

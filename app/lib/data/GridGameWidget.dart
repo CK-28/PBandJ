@@ -14,12 +14,9 @@ class GridGameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 10000,
-      // height: 128,
       child: FadeInImage(
         placeholder: MemoryImage(kTransparentImage),
         image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
-        // fit: BoxFit.contain,
       )
     );
   }
