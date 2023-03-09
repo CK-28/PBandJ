@@ -1,11 +1,20 @@
+/*
+  Grid of two rows of games
+*/
+
 import 'package:flutter/material.dart';
+import '../data/GridGameWidget.dart';
+import '../data/Game.dart';
 
 class GameGrid extends StatelessWidget {
     final String heading;
+    final List<Game> games;
 
     const GameGrid({
-        required this.heading
-    });
+        required this.heading,
+        Key? key,
+        required this.games
+    }) :super(key: key);
 
     @override
     Widget build(BuildContext context) {
@@ -14,28 +23,30 @@ class GameGrid extends StatelessWidget {
             children: [
                 Text(heading,
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                     )
                 ),
-                SizedBox(
-                    height: 300,
-                    child: GridView.builder(
-                        scrollDirection: Axis.horizontal,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                        ),
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                            return Card(
-                                color: Colors.amber,
-                                child: Center(
-                                    child: Text('$index')
-                                ),
-                            );
-                        }
-                    )
-                )
+                Container(
+                    // color: Color(0xFFEF6F0CC),
+                    height: 200,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.0),
+                      child: GridView.builder(
+                          scrollDirection: Axis.horizontal,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              childAspectRatio: (5/4),
+                          ),
+                          itemCount: 20,
+                          itemBuilder: (BuildContext context, int index) {
+                              return GridGameWidget(
+                                game: games[index],
+                              );
+                          }
+                      )
+                    ),
+                  )
             ]
         );
     }
