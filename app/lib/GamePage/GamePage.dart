@@ -1,129 +1,12 @@
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
 import '../data/GamesParser.dart';
+import 'package:transparent_image/transparent_image.dart';
 
+List<Game> games = gamesParser();
 
-var game =     {
-        "id": 20,
-        "age_ratings": [
-            {
-                "id": 344,
-                "category": 1,
-                "rating": 11
-            },
-            {
-                "id": 43418,
-                "category": 2,
-                "rating": 5
-            },
-            {
-                "id": 80299,
-                "category": 5,
-                "rating": 26
-            },
-            {
-                "id": 89423,
-                "category": 3,
-                "rating": 16
-            },
-            {
-                "id": 110368,
-                "category": 7,
-                "rating": 37
-            },
-            {
-                "id": 125599,
-                "category": 5,
-                "rating": 25
-            }
-        ],
-        "aggregated_rating": 92.625,
-        "cover": {
-            "id": 122598,
-            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mli.jpg"
-        },
-        "first_release_date": 1187654400,
-        "genres": [
-            {
-                "id": 5,
-                "name": "Shooter"
-            },
-            {
-                "id": 12,
-                "name": "Role-playing (RPG)"
-            },
-            {
-                "id": 31,
-                "name": "Adventure"
-            }
-        ],
-        "involved_companies": [
-            {
-                "id": 91804,
-                "company": {
-                    "id": 13,
-                    "name": "Demiurge Studios"
-                },
-                "developer": false
-            },
-            {
-                "id": 184941,
-                "company": {
-                    "id": 8,
-                    "name": "2K Games"
-                },
-                "developer": false
-            },
-            {
-                "id": 184942,
-                "company": {
-                    "id": 2492,
-                    "name": "2K Australia"
-                },
-                "developer": true
-            },
-            {
-                "id": 184943,
-                "company": {
-                    "id": 649,
-                    "name": "2K Boston"
-                },
-                "developer": true
-            },
-            {
-                "id": 184944,
-                "company": {
-                    "id": 411,
-                    "name": "Robosoft Technologies"
-                },
-                "developer": false
-            }
-        ],
-        "name": "BioShock",
-        "platforms": [
-            {
-                "id": 6,
-                "abbreviation": "PC",
-                "name": "PC (Microsoft Windows)"
-            },
-            {
-                "id": 9,
-                "abbreviation": "PS3",
-                "name": "PlayStation 3"
-            },
-            {
-                "id": 12,
-                "abbreviation": "X360",
-                "name": "Xbox 360"
-            },
-            {
-                "id": 14,
-                "abbreviation": "Mac",
-                "name": "Mac"
-            }
-        ],
-        "summary": "BioShock is a horror-themed first-person shooter set in a steampunk underwater dystopia. The player is urged to turn everything into a weapon: biologically modifying their own body with Plasmids, hacking devices and systems, upgrading their weapons, crafting new ammo variants, and experimenting with different battle techniques are all possible. The game is described by the developers as a spiritual successor to their previous PC title System Shock 2. BioShock received high praise in critical reviews for its atmospheric audio and visual quality, absorbing and original plot and its unique gaming experience."
-    };
+Game thisGame = games[3];
+List<String> tags = thisGame.tags();
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
@@ -135,15 +18,13 @@ class GamePage extends StatefulWidget {
 
 class _GamePage extends State<GamePage>{
   bool addButVis = false;
-  int releaseDate = int.parse(game["first_release_date"].toString());
-  var temp = game["involved_companies"];
-  //String devName = temp!=null?temp[0]["company"]["name"] : "<developer>";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF6F0CC),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+        backgroundColor: Color(0xFFCE9164),
         title: const Text(
           "Game Page",
           style: TextStyle(
@@ -160,22 +41,27 @@ class _GamePage extends State<GamePage>{
                 Stack(
                   children: <Widget>[
                     SizedBox(
-                            height: (MediaQuery.of(context).size.height / 5),
+                            height: (MediaQuery.of(context).size.height / 4),
                             child: Container(
-                                color: Colors.blueAccent,
-                                //color: Color(0xFFCE9164),//remove color to make it transpatrent
+                                //color: Colors.blueAccent,
+                                color:  Color(0xFFEC4686),//remove color to make it transpatrent
                                 child: const Center(child: Text(""))),
                           ),
                     Row(
                       children: [
-                        SizedBox(width:25,height: MediaQuery.of(context).size.height / 5,),
+                        SizedBox(width:25,height: MediaQuery.of(context).size.height / 4,),
                         Container(
-                          width: 100,
-                          height: 125,
+                          width: 125,
+                          height: 150,
                           //color: Colors.blueAccent,
                           color: Color(0xFFEC4686),
-                          child://Image.asset('assets/cover.jpg'),
-                          const Text('<Cover>', textAlign: TextAlign.center),
+                          child:FadeInImage(
+                                  placeholder: MemoryImage(kTransparentImage),
+                                  image: NetworkImage((thisGame.image == null)? "https://" : "https:${thisGame.image}"),
+                                  width: 100,
+                                  height: 125,
+                                  fit: BoxFit.contain,
+                              )                          //const Text('<Cover>', textAlign: TextAlign.center),
                         ),
                         const SizedBox(width:5),
                         Column(
@@ -183,11 +69,11 @@ class _GamePage extends State<GamePage>{
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height:5),
-                            Text((game["name"]!=null?game["name"].toString():'Title'), textAlign: TextAlign.center),
+                            Text(thisGame.name, textAlign: TextAlign.center),
                             const SizedBox(height:5),
-                            Text(DateTime.fromMicrosecondsSinceEpoch(releaseDate*1000000).toString(), textAlign: TextAlign.center),
+                            Text(thisGame.release.toString(), textAlign: TextAlign.center),
                             const SizedBox(height:65),
-                            const Text("Demiurge Studios", textAlign: TextAlign.center),
+                            Text(thisGame.developer(), textAlign: TextAlign.center),
                         ],),
                       ],
                     ),
@@ -198,7 +84,7 @@ class _GamePage extends State<GamePage>{
                   crossAxisAlignment: CrossAxisAlignment.start ,
                   children: [ 
                     const SizedBox(height:15),
-                    Row(children: [const SizedBox(width:10),const Text('Adventure Horror', textAlign: TextAlign.center),],),
+                    Row(children: [const SizedBox(width:10), Text(thisGame.genres[0].name, textAlign: TextAlign.center),],),
                     const SizedBox(height:5),
                     Row(
                         crossAxisAlignment: CrossAxisAlignment.start ,
@@ -207,13 +93,16 @@ class _GamePage extends State<GamePage>{
                         Stack(
                           children: <Widget>[
                             SizedBox(
-                                    height: MediaQuery.of(context).size.height / 2,
-                                    width: MediaQuery.of(context).size.width - (MediaQuery.of(context).size.width/3),
-                                    child: Container(
-                                        color: Colors.blueAccent,
-                                        //color: Color(0xFFEFB255),//remove color to make it transpatrent
-                                        child: Text(game["summary"]!=null?game["summary"].toString():'Description')),
-                                  ),
+                              height: MediaQuery.of(context).size.height / 2,
+                              width: MediaQuery.of(context).size.width - (MediaQuery.of(context).size.width/3),
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                 borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  color: Color(0xFFCE9164),
+                                ),
+                                padding: EdgeInsets.all(10),
+                                child: Text(thisGame.summary)),
+                                ),
                           ],
                         ),
                         const SizedBox(width:15),
@@ -221,19 +110,25 @@ class _GamePage extends State<GamePage>{
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                color: Color(0xFFCE9164),
+                              ),
+                              padding: EdgeInsets.all(5),
                               width: 100,
                               height: 150,
-                              color: Colors.blueAccent,
-                              //color: Color(0xFFEFB255),
-                              child: Center(child: Text("Review Score:\n"+ (game["aggregated_rating"]!=null?game["aggregated_rating"].toString():'<Ratings>'))),
+                              child: Center(child: Text("Review Score:\n"+ thisGame.rating.toString())),
                             ),
                             SizedBox(height:(MediaQuery.of(context).size.height / 2) - 300),
                             Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                color: Color(0xFFCE9164),
+                              ),                              
+                              padding: const EdgeInsets.all(5),
                               width: 100,
                               height: 150,
-                              color: Colors.blueAccent,
-                              //color: Color(0xFFEFB255),
-                              child:const Center(child: Text("Age Ratings: \n16")),
+                              child:Center(child: Text("Age Rating: " + thisGame.stringAgeRating())),
                             ),              
                         ],) 
                       ],
@@ -246,40 +141,39 @@ class _GamePage extends State<GamePage>{
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                        Container(width:200,
-                          padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
-                          child: 
-                          Wrap(
+                          Container(width:200,height: 50,
+                            padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
+                            child:
+                              Wrap(
+                                children: [
+                                        for(String t in tags)
+                                          Container(padding: EdgeInsets.all(5),child: Text(t, textAlign: TextAlign.center)),               
+                                ],
+                              ) ,
+                          ),
+                          SizedBox(height: tags.length!=null? tags.length.toInt()*4 : 75),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center ,
                             children: [
-                                  const Text('Shooter', textAlign: TextAlign.center),
-                                  const Text('Role-playing (RPG)', textAlign: TextAlign.center),
-                                  const Text('Adventure', textAlign: TextAlign.center),                
-                            ],
-                          ) ,
-                        ),
-                        const SizedBox(height:5),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start ,
-                          children: [
-                                const SizedBox(width:10),
-                                const Text('Single Player', textAlign: TextAlign.center),              
-                        ],),
-                        const SizedBox(height:5),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start ,
-                          children: [
-                                const SizedBox(width:65),
-                                const Text('Single Player', textAlign: TextAlign.center),              
-                        ],),
+                                  const SizedBox(width:10),
+                                  const Text('<Gamemode>', textAlign: TextAlign.center),              
+                          ],),
+                          const SizedBox(height:5),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start ,
+                            children: [
+                                  const SizedBox(width:65),
+                                  const Text('<GamemodeList>', textAlign: TextAlign.center),              
+                          ],),
                       ],),
                       SizedBox(width: 25,),
                       if(addButVis)Column(
                         children: [
-                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Playing"),)),
+                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Playing"),style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFCE9164),),)),
                           const SizedBox(height:5),
-                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Ongoing"),)),
+                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Ongoing"),style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFCE9164),),)),
                           const SizedBox(height:5),
-                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Backlog"),)),                        
+                          SizedBox(height:20,width:100,child: ElevatedButton(onPressed: (() {}), child: Text("Backlog"),style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFCE9164),),)),                        
                         ],)
                       else
                         Column(
@@ -295,10 +189,10 @@ class _GamePage extends State<GamePage>{
                             addButVis=true;
                             setState(() {});
                           }
-                          // Add your onPressed code here!
                         },
                         child: Icon(Icons.add),
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFCE9164),
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(24),
                         ),
@@ -309,21 +203,6 @@ class _GamePage extends State<GamePage>{
               ],
           ),
         ),
-      //   floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     if(addButVis){
-      //       addButVis=false;
-      //       setState(() {});
-      //     }
-      //     else{
-      //       addButVis=true;
-      //       setState(() {});
-      //     }
-      //     // Add your onPressed code here!
-      //   },
-      //   backgroundColor: Colors.blueAccent,
-      //   child: const Icon(Icons.add),
-      // ),
     );
   }
 }

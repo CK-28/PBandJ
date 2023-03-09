@@ -6,6 +6,7 @@ import './models/GameModel.dart';
 import './MainScaffold.dart';
 
 import 'package:app/GamePage/GamePage.dart';
+import 'package:app/SearchPage/SearchPage.dart';
 
 void main() {
   runApp(const MyApp());
