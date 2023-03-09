@@ -1,3 +1,4 @@
+import 'package:app/SearchPage/SearchPage.dart';
 import 'package:flutter/material.dart';
 
 import './home/HomePage.dart';
@@ -16,21 +17,19 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     });
   }
 
-  // Loads page content based on
-  Widget _loadContent() {
-    switch (_selectedIndex) {
-      case 0:
-        return (HomePage());
-        break;
-      case 1:
-        return (Text("Browse page"));
-        break;
-      case 2:
-        return (Text("Profile page"));
-        break;
-      default:
-        return (Text("Something has gone very wrong"));
-    }
+    // Loads page content based on 
+    Widget _loadContent() {
+        switch (_selectedIndex) {
+            case 0:
+                return(HomePage());
+            case 1:
+                return(SearchPage());
+            case 2:
+                return(Text("Profile page"));
+            default:
+                return(Text("Something has gone very wrong"));
+        }
+     }
   }
 
   @override

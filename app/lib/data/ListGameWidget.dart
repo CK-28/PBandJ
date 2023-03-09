@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:app/data/Game.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class GameWidget extends StatelessWidget {
+class ListGameWidget extends StatelessWidget {
   final Game game;
   final bool isSmall;
-  const GameWidget({Key? key, required this.game, required this.isSmall}) :super(key: key);
+  const ListGameWidget({Key? key, required this.game, required this.isSmall}) :super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class GameWidget extends StatelessWidget {
                   Center(
                     child: FadeInImage(
                         placeholder: MemoryImage(kTransparentImage),
-                        image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
+                        image: NetworkImage((game.imageId == null)? "https://" :  "https:${game.image}"),
                         width: imageDimensions,
                         height: imageDimensions,
                         fit: BoxFit.contain,
@@ -69,5 +69,4 @@ class GameWidget extends StatelessWidget {
       )
     );
   }
-
 }
