@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import '../data/GridGameWidget.dart';
+import '../data/Game.dart';
 
 class GameGrid extends StatelessWidget {
     final String heading;
+    final List<Game> games;
 
     const GameGrid({
-        required this.heading
-    });
+        required this.heading,
+        Key? key,
+        required this.games
+    }) :super(key: key);
 
     @override
     Widget build(BuildContext context) {
@@ -18,20 +23,19 @@ class GameGrid extends StatelessWidget {
                         fontWeight: FontWeight.bold
                     )
                 ),
-                SizedBox(
-                    height: 300,
+                Container(
+                    height: 200,
                     child: GridView.builder(
                         scrollDirection: Axis.horizontal,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
+                            childAspectRatio: MediaQuery.of(context).size.width /
+                                              (MediaQuery.of(context).size.height),
                         ),
                         itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
-                            return Card(
-                                color: Colors.amber,
-                                child: Center(
-                                    child: Text('$index')
-                                ),
+                            return GridGameWidget(
+                              game: games[index],
                             );
                         }
                     )
