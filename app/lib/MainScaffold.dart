@@ -1,3 +1,4 @@
+import 'package:app/SearchPage/SearchPage.dart';
 import 'package:flutter/material.dart';
 
 import './home/HomePage.dart';
@@ -22,7 +23,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
             case 0:
                 return(HomePage());
             case 1:
-                return(Text("Browse page"));
+                return(SearchPage());
             case 2:
                 return(Text("Profile page"));
             default:
