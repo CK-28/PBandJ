@@ -1,3 +1,7 @@
+/*
+  Grid of two rows of games
+*/
+
 import 'package:flutter/material.dart';
 import '../data/GridGameWidget.dart';
 import '../data/Game.dart';
@@ -19,27 +23,30 @@ class GameGrid extends StatelessWidget {
             children: [
                 Text(heading,
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                     )
                 ),
                 Container(
+                    // color: Color(0xFFEF6F0CC),
                     height: 200,
-                    child: GridView.builder(
-                        scrollDirection: Axis.horizontal,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: MediaQuery.of(context).size.width /
-                                              (MediaQuery.of(context).size.height),
-                        ),
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                            return GridGameWidget(
-                              game: games[index],
-                            );
-                        }
-                    )
-                )
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.0),
+                      child: GridView.builder(
+                          scrollDirection: Axis.horizontal,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              childAspectRatio: (5/4),
+                          ),
+                          itemCount: 20,
+                          itemBuilder: (BuildContext context, int index) {
+                              return GridGameWidget(
+                                game: games[index],
+                              );
+                          }
+                      )
+                    ),
+                  )
             ]
         );
     }

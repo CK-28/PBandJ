@@ -80,7 +80,7 @@ class Game {
    *
    *
    */
-  // NOTE: I cant figure out where this is being called?
+  // NOTE: I cant figure out where this is being called? If anywhere
   String getImageFromId(String size) {
     return "http://images.igdb.com/igdb/image/upload/t_$size/$imageId.jpg";
   }

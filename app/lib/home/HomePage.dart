@@ -8,7 +8,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Container(
+      // color: Color(0xFFFEFB255),
+      child: ListView(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         children: [
             GameGrid(
                 heading: "Playing",
@@ -23,6 +26,7 @@ class HomePage extends StatelessWidget {
                 games: games,
             ),
         ]
+      )
     );
   }
 }

@@ -18,17 +18,12 @@ class SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Search"),
-      ),
-      body: Center(
-          child:Column(
-          children: [
-            SearchFieldWidget(), //Search section
-            SearchGamesListWidget(games: games),
-          ],
-        )
+    return  Center(
+      child:Column(
+        children: [
+          SearchFieldWidget(), //Search section
+          SearchGamesListWidget(games: games),
+        ],
       )
     );
   }
