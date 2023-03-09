@@ -37,7 +37,7 @@ class ListGameWidget extends StatelessWidget {
                   Center(
                     child: FadeInImage(
                         placeholder: MemoryImage(kTransparentImage),
-                        image: NetworkImage((game.imageId == null)? "https://" : game.getImageFromId("1080p")),
+                        image: NetworkImage((game.imageId == null)? "https://" :  "https:${game.image}"),
                         width: imageDimensions,
                         height: imageDimensions,
                         fit: BoxFit.contain,
