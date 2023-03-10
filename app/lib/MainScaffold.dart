@@ -30,12 +30,13 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                 return(Text("Something has gone very wrong"));
         }
      }
-  }
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF875632),
         title: Text("PB & J"),
         actions: [
           Builder(builder: (context) {
@@ -50,6 +51,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
       ),
       body: _loadContent(),
       endDrawer: Drawer(
+        // color: Color(0xFF875632),
         child: Column(
           // Important: Remove any padding from the ListView
           children: [
@@ -61,7 +63,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                   width: double.infinity,
                   child: const DrawerHeader(
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Color(0xFF875632),
                     ),
                     child: Text('Settings'),
                   ),
@@ -136,6 +138,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFFEC4686),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -151,7 +154,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
     );
