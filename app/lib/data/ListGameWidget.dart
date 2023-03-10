@@ -14,7 +14,7 @@ class ListGameWidget extends StatelessWidget {
     var title =  Text(
       game.name,
       textAlign: TextAlign.center,
-      style: const TextStyle(color: Colors.white, fontSize: 16),
+      style: const TextStyle(color: Colors.white, fontSize: 25),
     );
 
     var developer = Text(
@@ -69,7 +69,7 @@ class ListGameWidget extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment:CrossAxisAlignment.start,
-
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       title,
                       developer,
