@@ -24,7 +24,7 @@ class GridGameWidget extends StatelessWidget {
         child: Container(
           child: FadeInImage(
             placeholder: MemoryImage(kTransparentImage),
-            image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
+            image: NetworkImage((game.image == null)? "https://" : game.getImageFromId("1080p")),
           ),
           decoration: BoxDecoration(
             boxShadow: [
@@ -39,7 +39,7 @@ class GridGameWidget extends StatelessWidget {
         ),
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => GamePage()));
+              builder: (context) => GamePage(game: game)));
         },
       )
     )
