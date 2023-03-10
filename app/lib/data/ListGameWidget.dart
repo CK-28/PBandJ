@@ -22,7 +22,17 @@ class ListGameWidget extends StatelessWidget {
       style: const TextStyle(color: Colors.deepOrangeAccent),
     );
 
-    var imageDimensions = (isSmall)? 125.0 : 100.0;
+    var gameRating = Text(
+      game.stringAgeRating(),
+      style: TextStyle(color: Colors.grey[50]),
+    );
+
+    var platformText = Text(
+      "Platforms: ${game.platformList().take(5).join(", ")}",
+      style: TextStyle(color: Colors.black),
+    );
+
+    var imageDimensions = (isSmall)? 150.0 : 125.0;
 
 
     return GestureDetector(
@@ -34,8 +44,9 @@ class ListGameWidget extends StatelessWidget {
       },
       child: Card(
         color: Colors.blueGrey,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.only( top: 8, right: 8, bottom: 8),
           child: Row(
             mainAxisSize: (isSmall)? MainAxisSize.min : MainAxisSize.max,
 
@@ -57,11 +68,15 @@ class ListGameWidget extends StatelessWidget {
                 if(!isSmall) //Content for larger widget
                 Expanded(
                   child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+
                     children: [
                       title,
                       developer,
+                      gameRating,
+                      platformText,
                       Wrap(
-                        children: game.tags().map((tag) => Card(
+                        children: game.genreList().map((tag) => Card(
                           child:  Padding (
                             padding: const EdgeInsets.all(3),
                             child: Text(tag),

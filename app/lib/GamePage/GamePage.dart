@@ -129,7 +129,7 @@ class _GamePage extends State<GamePage>{
                               padding: const EdgeInsets.all(5),
                               width: 100,
                               height: 150,
-                              child:Center(child: Text("Age Rating: " + thisGame.stringAgeRating())),
+                              child:Center(child: Text(thisGame.stringAgeRating())),
                             ),              
                         ],) 
                       ],

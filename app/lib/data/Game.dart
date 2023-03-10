@@ -34,31 +34,43 @@ class Game {
 
   List<String> tags () {
     var tags = <String>[];
-    tags.add("Rated: ${stringAgeRating()}");
-    genres.forEach((genre) => tags.add(genre.name));
-    platforms.forEach((platform) =>  tags.add(platform.shortestName()));
+    tags.addAll(genreList());
+
 
     return tags;
   }
 
+  List<String> genreList () {
+    var genresList = <String>[];
+    genres.forEach((genre) => genresList.add(genre.name));
+    return genresList;
+  }
+
+  List<String> platformList () {
+    var platformList = <String>[];
+    platforms.forEach((platform) =>  platformList.add(platform.shortestName()));
+    return platformList;
+  }
+
   String stringAgeRating() {
+    var name = "Age Rating:";
     switch(ageRating) {
       case 6:
-        return "RP";
+        return "$name RP";
       case 7:
-        return "EC";
+        return "$name EC";
       case 8:
-        return "E";
+        return "$name E";
       case 9:
-        return "E10";
+        return "$name E10";
       case 10:
-        return "T";
+        return "$name T";
       case 11:
-        return "M";
+        return "$name M";
       case 12:
-        return "AO";
+        return "$name AO";
       default:
-        return "N/A";
+        return "$name N/A";
     }
   }
 
