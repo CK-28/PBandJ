@@ -35,7 +35,7 @@ class Game {
   List<String> tags () {
     var tags = <String>[];
     tags.addAll(genreList());
-
+    tags.addAll(platformList());
 
     return tags;
   }
