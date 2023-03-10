@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
+import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class GamePage extends StatefulWidget {
@@ -18,6 +19,8 @@ class _GamePage extends State<GamePage>{
   Widget build(BuildContext context) {
     Game thisGame = widget.game;
     List<String> tags = thisGame.tags();
+
+    DateFormat dateFormat = DateFormat("yyyy/MM/dd");
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -69,7 +72,7 @@ class _GamePage extends State<GamePage>{
                             const SizedBox(height:5),
                             Text(thisGame.name, textAlign: TextAlign.center),
                             const SizedBox(height:5),
-                            Text(thisGame.release.toString(), textAlign: TextAlign.center),
+                            Text(dateFormat.format(thisGame.release), textAlign: TextAlign.center),
                             const SizedBox(height:65),
                             Text(thisGame.developer(), textAlign: TextAlign.center),
                         ],),
