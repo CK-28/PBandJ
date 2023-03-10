@@ -30,7 +30,6 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                 return(Text("Something has gone very wrong"));
         }
      }
-  
 
   @override
   Widget build(BuildContext context) {

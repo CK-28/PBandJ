@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
-import '../data/GamesParser.dart';
+import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-List<Game> games = gamesParser();
-
-Game thisGame = games[3];
-List<String> tags = thisGame.tags();
-
 class GamePage extends StatefulWidget {
-  const GamePage({super.key});
+  final Game game;
+  const GamePage({super.key, required this.game});
 
   @override
   State<GamePage> createState() => _GamePage();
@@ -21,6 +17,11 @@ class _GamePage extends State<GamePage>{
 
   @override
   Widget build(BuildContext context) {
+    Game thisGame = widget.game;
+    List<String> tags = thisGame.tags();
+
+    DateFormat dateFormat = DateFormat("yyyy/MM/dd");
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
@@ -57,7 +58,7 @@ class _GamePage extends State<GamePage>{
                           color: Color(0xFFEC4686),
                           child:FadeInImage(
                                   placeholder: MemoryImage(kTransparentImage),
-                                  image: NetworkImage((thisGame.image == null)? "https://" : "https:${thisGame.image}"),
+                                  image: NetworkImage((thisGame.image == null)? "https://" : thisGame.getImageFromId("1080p")),
                                   width: 100,
                                   height: 125,
                                   fit: BoxFit.contain,
@@ -71,7 +72,7 @@ class _GamePage extends State<GamePage>{
                             const SizedBox(height:5),
                             Text(thisGame.name, textAlign: TextAlign.center),
                             const SizedBox(height:5),
-                            Text(thisGame.release.toString(), textAlign: TextAlign.center),
+                            Text(dateFormat.format(thisGame.release), textAlign: TextAlign.center),
                             const SizedBox(height:65),
                             Text(thisGame.developer(), textAlign: TextAlign.center),
                         ],),
@@ -128,7 +129,7 @@ class _GamePage extends State<GamePage>{
                               padding: const EdgeInsets.all(5),
                               width: 100,
                               height: 150,
-                              child:Center(child: Text("Age Rating: " + thisGame.stringAgeRating())),
+                              child:Center(child: Text(thisGame.stringAgeRating())),
                             ),              
                         ],) 
                       ],
