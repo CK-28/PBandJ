@@ -21,14 +21,16 @@ class GameGrid extends StatelessWidget {
         return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                Text(heading,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    )
+                Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Text(heading,
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
+                        )
+                    ),
                 ),
                 Container(
-                    // color: Color(0xFFEF6F0CC),
                     height: 200,
                     child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 5.0),
@@ -46,7 +48,7 @@ class GameGrid extends StatelessWidget {
                           }
                       )
                     ),
-                  )
+                )
             ]
         );
     }
