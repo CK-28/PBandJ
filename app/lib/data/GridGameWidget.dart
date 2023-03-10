@@ -7,20 +7,42 @@ import 'package:flutter/material.dart';
 import 'package:app/data/Game.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../GamePage/GamePage.dart';
+
 class GridGameWidget extends StatelessWidget {
   final Game game;
   const GridGameWidget({Key? key, required this.game}) :super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // width: 10000,
-      // height: 128,
-      child: FadeInImage(
-        placeholder: MemoryImage(kTransparentImage),
-        image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
-        // fit: BoxFit.contain,
+    return Padding(
+      padding : EdgeInsets.only(bottom: 10, right: 10),
+      child: Container(
+      // height: 100,
+      color: Color(0xFFF8D5BC),
+      child: GestureDetector(
+        child: Container(
+          child: FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
+            image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
+          ),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                spreadRadius: 0.5,
+                blurRadius: 5,
+                offset: const Offset(3, 5),
+              ),
+            ]
+          ),
+        ),
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => GamePage()));
+        },
       )
-    );
+    )
+      );
   }
 }
