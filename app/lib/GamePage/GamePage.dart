@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
-import '../data/GamesParser.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-List<Game> games = gamesParser();
-
-Game thisGame = games[3];
-List<String> tags = thisGame.tags();
-
 class GamePage extends StatefulWidget {
-  const GamePage({super.key});
+  final Game game;
+  const GamePage({super.key, required this.game});
 
   @override
   State<GamePage> createState() => _GamePage();
@@ -21,6 +16,9 @@ class _GamePage extends State<GamePage>{
 
   @override
   Widget build(BuildContext context) {
+    Game thisGame = widget.game;
+    List<String> tags = thisGame.tags();
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
@@ -57,7 +55,7 @@ class _GamePage extends State<GamePage>{
                           color: Color(0xFFEC4686),
                           child:FadeInImage(
                                   placeholder: MemoryImage(kTransparentImage),
-                                  image: NetworkImage((thisGame.image == null)? "https://" : "https:${thisGame.image}"),
+                                  image: NetworkImage((thisGame.image == null)? "https://" : thisGame.getImageFromId("1080p")),
                                   width: 100,
                                   height: 125,
                                   fit: BoxFit.contain,

@@ -27,7 +27,7 @@ String jsonString = r'''[
         "cover": {
             "id": 90967,
             "image_id": "co1y6v",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1y6v.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1y6v.jpg"
         },
         "first_release_date": 953596800,
         "genres": [
@@ -98,7 +98,7 @@ String jsonString = r'''[
         "cover": {
             "id": 96746,
             "image_id": "co22ne",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co22ne.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co22ne.jpg"
         },
         "first_release_date": 912384000,
         "genres": [
@@ -175,7 +175,7 @@ String jsonString = r'''[
         "cover": {
             "id": 129190,
             "image_id": "co2rom",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2rom.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2rom.jpg"
         },
         "first_release_date": 1085443200,
         "genres": [
@@ -266,7 +266,7 @@ String jsonString = r'''[
         "cover": {
             "id": 96744,
             "image_id": "co22nc",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co22nc.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co22nc.jpg"
         },
         "first_release_date": 1393286400,
         "genres": [
@@ -354,7 +354,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93899,
             "image_id": "co20gb",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co20gb.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co20gb.jpg"
         },
         "first_release_date": 914198400,
         "genres": [
@@ -440,7 +440,7 @@ String jsonString = r'''[
         "cover": {
             "id": 90896,
             "image_id": "co1y4w",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1y4w.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1y4w.jpg"
         },
         "first_release_date": 969494400,
         "genres": [
@@ -520,7 +520,7 @@ String jsonString = r'''[
         "cover": {
             "id": 8,
             "image_id": "dwovjbfacbjx7fr1gtut",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/dwovjbfacbjx7fr1gtut.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/dwovjbfacbjx7fr1gtut.jpg"
         },
         "first_release_date": 770515200,
         "genres": [
@@ -591,7 +591,7 @@ String jsonString = r'''[
         "cover": {
             "id": 105564,
             "image_id": "co29gc",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co29gc.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co29gc.jpg"
         },
         "first_release_date": 820368000,
         "genres": [
@@ -673,7 +673,7 @@ String jsonString = r'''[
         "cover": {
             "id": 104633,
             "image_id": "co28qh",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co28qh.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co28qh.jpg"
         },
         "first_release_date": 932688000,
         "genres": [
@@ -782,7 +782,7 @@ String jsonString = r'''[
         "cover": {
             "id": 95796,
             "image_id": "co21x0",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co21x0.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co21x0.jpg"
         },
         "first_release_date": 1172534400,
         "genres": [
@@ -919,7 +919,7 @@ String jsonString = r'''[
         "cover": {
             "id": 123160,
             "image_id": "co2n14",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2n14.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2n14.jpg"
         },
         "first_release_date": 1100563200,
         "genres": [
@@ -987,7 +987,7 @@ String jsonString = r'''[
         "cover": {
             "id": 79871,
             "image_id": "co1pmn",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1pmn.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1pmn.jpg"
         },
         "first_release_date": 960336000,
         "genres": [
@@ -1065,7 +1065,7 @@ String jsonString = r'''[
         "cover": {
             "id": 91139,
             "image_id": "co1ybn",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1ybn.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ybn.jpg"
         },
         "first_release_date": 875577600,
         "genres": [
@@ -1161,7 +1161,7 @@ String jsonString = r'''[
         "cover": {
             "id": 234031,
             "image_id": "co50kv",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co50kv.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co50kv.jpg"
         },
         "first_release_date": 909619200,
         "genres": [
@@ -1240,7 +1240,7 @@ String jsonString = r'''[
         "cover": {
             "id": 91184,
             "image_id": "co1ycw",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1ycw.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ycw.jpg"
         },
         "first_release_date": 1225152000,
         "genres": [
@@ -1329,7 +1329,7 @@ String jsonString = r'''[
         "cover": {
             "id": 85752,
             "image_id": "co1u60",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1u60.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1u60.jpg"
         },
         "first_release_date": 1287446400,
         "genres": [
@@ -1423,7 +1423,7 @@ String jsonString = r'''[
         "cover": {
             "id": 91143,
             "image_id": "co1ybr",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1ybr.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1ybr.jpg"
         },
         "first_release_date": 984614400,
         "genres": [
@@ -1515,7 +1515,7 @@ String jsonString = r'''[
         "cover": {
             "id": 181838,
             "image_id": "co3wb2",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co3wb2.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co3wb2.jpg"
         },
         "first_release_date": 995846400,
         "genres": [
@@ -1697,7 +1697,7 @@ String jsonString = r'''[
         "cover": {
             "id": 120981,
             "image_id": "co2lcl",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2lcl.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2lcl.jpg"
         },
         "first_release_date": 1066089600,
         "genres": [
@@ -1795,7 +1795,7 @@ String jsonString = r'''[
         "cover": {
             "id": 122598,
             "image_id": "co2mli",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2mli.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mli.jpg"
         },
         "first_release_date": 1187654400,
         "genres": [
@@ -1922,7 +1922,7 @@ String jsonString = r'''[
         "cover": {
             "id": 122599,
             "image_id": "co2mlj",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2mlj.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mlj.jpg"
         },
         "first_release_date": 1265673600,
         "genres": [
@@ -2063,7 +2063,7 @@ String jsonString = r'''[
         "cover": {
             "id": 201260,
             "image_id": "co4bak",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co4bak.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co4bak.jpg"
         },
         "first_release_date": 934329600,
         "genres": [
@@ -2129,7 +2129,7 @@ String jsonString = r'''[
         "cover": {
             "id": 204916,
             "image_id": "co4e44",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co4e44.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co4e44.jpg"
         },
         "first_release_date": 780192000,
         "genres": [
@@ -2198,7 +2198,7 @@ String jsonString = r'''[
         "cover": {
             "id": 114679,
             "image_id": "co2ghj",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2ghj.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2ghj.jpg"
         },
         "first_release_date": 765072000,
         "genres": [
@@ -2291,7 +2291,7 @@ String jsonString = r'''[
         "cover": {
             "id": 114318,
             "image_id": "co2g7i",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2g7i.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2g7i.jpg"
         },
         "first_release_date": 867628800,
         "genres": [
@@ -2370,7 +2370,7 @@ String jsonString = r'''[
         "cover": {
             "id": 109784,
             "image_id": "co2cpk",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2cpk.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2cpk.jpg"
         },
         "first_release_date": 897868800,
         "genres": [
@@ -2427,7 +2427,7 @@ String jsonString = r'''[
         "cover": {
             "id": 142620,
             "image_id": "co321o",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co321o.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co321o.jpg"
         },
         "first_release_date": 528508800,
         "genres": [
@@ -2496,7 +2496,7 @@ String jsonString = r'''[
         "cover": {
             "id": 273626,
             "image_id": "co5v4q",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5v4q.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5v4q.jpg"
         },
         "first_release_date": 563846400,
         "genres": [
@@ -2573,7 +2573,7 @@ String jsonString = r'''[
         "cover": {
             "id": 232898,
             "image_id": "co4zpe",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co4zpe.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co4zpe.jpg"
         },
         "first_release_date": 606700800,
         "genres": [
@@ -2637,7 +2637,7 @@ String jsonString = r'''[
         "cover": {
             "id": 273629,
             "image_id": "co5v4t",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5v4t.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5v4t.jpg"
         },
         "first_release_date": 662688000,
         "genres": [
@@ -2697,7 +2697,7 @@ String jsonString = r'''[
         "cover": {
             "id": 273630,
             "image_id": "co5v4u",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5v4u.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5v4u.jpg"
         },
         "first_release_date": 728870400,
         "genres": [
@@ -2754,7 +2754,7 @@ String jsonString = r'''[
         "cover": {
             "id": 273628,
             "image_id": "co5v4s",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5v4s.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5v4s.jpg"
         },
         "first_release_date": 791596800,
         "genres": [
@@ -2819,7 +2819,7 @@ String jsonString = r'''[
         "cover": {
             "id": 90278,
             "image_id": "co1xnq",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1xnq.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1xnq.jpg"
         },
         "first_release_date": 976060800,
         "genres": [
@@ -2922,7 +2922,7 @@ String jsonString = r'''[
         "cover": {
             "id": 182022,
             "image_id": "co3wg6",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co3wg6.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co3wg6.jpg"
         },
         "first_release_date": 867283200,
         "genres": [
@@ -3020,7 +3020,7 @@ String jsonString = r'''[
         "cover": {
             "id": 96742,
             "image_id": "co22na",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co22na.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co22na.jpg"
         },
         "first_release_date": 930700800,
         "genres": [
@@ -3104,7 +3104,7 @@ String jsonString = r'''[
         "cover": {
             "id": 114332,
             "image_id": "co2g7w",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2g7w.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2g7w.jpg"
         },
         "first_release_date": 1223942400,
         "genres": [
@@ -3189,7 +3189,7 @@ String jsonString = r'''[
         "cover": {
             "id": 94526,
             "image_id": "co20xq",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co20xq.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co20xq.jpg"
         },
         "first_release_date": 1295913600,
         "genres": [
@@ -3284,7 +3284,7 @@ String jsonString = r'''[
         "cover": {
             "id": 81353,
             "image_id": "co1qrt",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1qrt.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1qrt.jpg"
         },
         "first_release_date": 1030492800,
         "genres": [
@@ -3384,7 +3384,7 @@ String jsonString = r'''[
         "cover": {
             "id": 123159,
             "image_id": "co2n13",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2n13.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2n13.jpg"
         },
         "first_release_date": 1282608000,
         "genres": [
@@ -3473,7 +3473,7 @@ String jsonString = r'''[
         "cover": {
             "id": 81923,
             "image_id": "co1r7n",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1r7n.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1r7n.jpg"
         },
         "first_release_date": 961977600,
         "genres": [
@@ -3558,7 +3558,7 @@ String jsonString = r'''[
         "cover": {
             "id": 86954,
             "image_id": "co1v3e",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1v3e.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1v3e.jpg"
         },
         "first_release_date": 1070323200,
         "genres": [
@@ -3637,7 +3637,7 @@ String jsonString = r'''[
         "cover": {
             "id": 82118,
             "image_id": "co1rd2",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1rd2.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rd2.jpg"
         },
         "first_release_date": 1314057600,
         "genres": [
@@ -3719,7 +3719,7 @@ String jsonString = r'''[
         "cover": {
             "id": 98776,
             "image_id": "co247s",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co247s.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co247s.jpg"
         },
         "first_release_date": 1182816000,
         "genres": [
@@ -3799,7 +3799,7 @@ String jsonString = r'''[
         "cover": {
             "id": 98775,
             "image_id": "co247r",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co247r.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co247r.jpg"
         },
         "first_release_date": 1203033600,
         "genres": [
@@ -3885,7 +3885,7 @@ String jsonString = r'''[
         "cover": {
             "id": 98774,
             "image_id": "co247q",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co247q.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co247q.jpg"
         },
         "first_release_date": 1245715200,
         "genres": [
@@ -3957,7 +3957,7 @@ String jsonString = r'''[
         "cover": {
             "id": 105005,
             "image_id": "co290t",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co290t.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co290t.jpg"
         },
         "first_release_date": 1245715200,
         "genres": [
@@ -4016,7 +4016,7 @@ String jsonString = r'''[
         "cover": {
             "id": 105006,
             "image_id": "co290u",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co290u.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co290u.jpg"
         },
         "first_release_date": 1245715200,
         "genres": [
@@ -4070,7 +4070,7 @@ String jsonString = r'''[
         "cover": {
             "id": 237461,
             "image_id": "co5385",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5385.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5385.jpg"
         },
         "first_release_date": 739324800,
         "genres": [
@@ -4149,7 +4149,7 @@ String jsonString = r'''[
         "cover": {
             "id": 196705,
             "image_id": "co47s1",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co47s1.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co47s1.jpg"
         },
         "first_release_date": 725846400,
         "genres": [
@@ -4213,7 +4213,7 @@ String jsonString = r'''[
         "cover": {
             "id": 238611,
             "image_id": "co5443",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co5443.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co5443.jpg"
         },
         "first_release_date": 851990400,
         "genres": [
@@ -4292,7 +4292,7 @@ String jsonString = r'''[
         "cover": {
             "id": 120072,
             "image_id": "co2knc",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2knc.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2knc.jpg"
         },
         "first_release_date": 764553600,
         "genres": [
@@ -4358,7 +4358,7 @@ String jsonString = r'''[
         "cover": {
             "id": 91103,
             "image_id": "co1yan",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1yan.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1yan.jpg"
         },
         "first_release_date": 841449600,
         "genres": [
@@ -4428,7 +4428,7 @@ String jsonString = r'''[
         "cover": {
             "id": 238121,
             "image_id": "co53qh",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co53qh.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co53qh.jpg"
         },
         "first_release_date": 880848000,
         "genres": [
@@ -4489,7 +4489,7 @@ String jsonString = r'''[
         "cover": {
             "id": 238122,
             "image_id": "co53qi",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co53qi.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co53qi.jpg"
         },
         "first_release_date": 909792000,
         "genres": [
@@ -4540,7 +4540,7 @@ String jsonString = r'''[
         "cover": {
             "id": 120073,
             "image_id": "co2knd",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2knd.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2knd.jpg"
         },
         "first_release_date": 1020211200,
         "genres": [
@@ -4606,7 +4606,7 @@ String jsonString = r'''[
         "cover": {
             "id": 95264,
             "image_id": "co21i8",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co21i8.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co21i8.jpg"
         },
         "first_release_date": 1036540800,
         "genres": [
@@ -4665,7 +4665,7 @@ String jsonString = r'''[
         "cover": {
             "id": 95257,
             "image_id": "co21i1",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co21i1.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co21i1.jpg"
         },
         "first_release_date": 1054598400,
         "genres": [
@@ -4739,7 +4739,7 @@ String jsonString = r'''[
         "cover": {
             "id": 84680,
             "image_id": "co1tc8",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1tc8.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1tc8.jpg"
         },
         "first_release_date": 1142812800,
         "genres": [
@@ -4836,7 +4836,7 @@ String jsonString = r'''[
         "cover": {
             "id": 141222,
             "image_id": "co30yu",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co30yu.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co30yu.jpg"
         },
         "first_release_date": 878256000,
         "genres": [
@@ -4917,7 +4917,7 @@ String jsonString = r'''[
         "cover": {
             "id": 97237,
             "image_id": "co2311",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2311.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2311.jpg"
         },
         "first_release_date": 973036800,
         "genres": [
@@ -5003,7 +5003,7 @@ String jsonString = r'''[
         "cover": {
             "id": 232483,
             "image_id": "co4zdv",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co4zdv.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co4zdv.jpg"
         },
         "first_release_date": 1246924800,
         "genres": [
@@ -5096,7 +5096,7 @@ String jsonString = r'''[
         "cover": {
             "id": 110509,
             "image_id": "co2d9p",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2d9p.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2d9p.jpg"
         },
         "first_release_date": 1247616000,
         "genres": [
@@ -5197,7 +5197,7 @@ String jsonString = r'''[
         "cover": {
             "id": 100010,
             "image_id": "co2562",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2562.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2562.jpg"
         },
         "first_release_date": 1277510400,
         "genres": [
@@ -5261,7 +5261,7 @@ String jsonString = r'''[
         "cover": {
             "id": 113382,
             "image_id": "co2fhi",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2fhi.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2fhi.jpg"
         },
         "first_release_date": 846720000,
         "genres": [
@@ -5351,7 +5351,7 @@ String jsonString = r'''[
         "cover": {
             "id": 155725,
             "image_id": "co3c5p",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co3c5p.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co3c5p.jpg"
         },
         "first_release_date": 1046131200,
         "genres": [
@@ -5415,7 +5415,7 @@ String jsonString = r'''[
         "cover": {
             "id": 137577,
             "image_id": "co2y5l",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2y5l.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2y5l.jpg"
         },
         "first_release_date": 825984000,
         "genres": [
@@ -5510,7 +5510,7 @@ String jsonString = r'''[
         "cover": {
             "id": 89689,
             "image_id": "co1x7d",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1x7d.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1x7d.jpg"
         },
         "first_release_date": 1191974400,
         "genres": [
@@ -5633,7 +5633,7 @@ String jsonString = r'''[
         "cover": {
             "id": 82660,
             "image_id": "co1rs4",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1rs4.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1rs4.jpg"
         },
         "first_release_date": 1303171200,
         "genres": [
@@ -5750,7 +5750,7 @@ String jsonString = r'''[
         "cover": {
             "id": 89700,
             "image_id": "co1x7o",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1x7o.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1x7o.jpg"
         },
         "first_release_date": 1195516800,
         "genres": [
@@ -5871,7 +5871,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93684,
             "image_id": "co20ac",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co20ac.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co20ac.jpg"
         },
         "first_release_date": 1264464000,
         "genres": [
@@ -5985,7 +5985,7 @@ String jsonString = r'''[
         "cover": {
             "id": 89702,
             "image_id": "co1x7q",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1x7q.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1x7q.jpg"
         },
         "first_release_date": 1330992000,
         "genres": [
@@ -6086,7 +6086,7 @@ String jsonString = r'''[
         "cover": {
             "id": 122968,
             "image_id": "co2mvs",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2mvs.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mvs.jpg"
         },
         "first_release_date": 1257206400,
         "genres": [
@@ -6174,7 +6174,7 @@ String jsonString = r'''[
         "cover": {
             "id": 122971,
             "image_id": "co2mvv",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2mvv.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mvv.jpg"
         },
         "first_release_date": 1268697600,
         "genres": [
@@ -6286,7 +6286,7 @@ String jsonString = r'''[
         "cover": {
             "id": 122977,
             "image_id": "co2mw1",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2mw1.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2mw1.jpg"
         },
         "first_release_date": 1299542400,
         "genres": [
@@ -6417,7 +6417,7 @@ String jsonString = r'''[
         "cover": {
             "id": 125640,
             "image_id": "co2oy0",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2oy0.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2oy0.jpg"
         },
         "first_release_date": 1129593600,
         "genres": [
@@ -6497,7 +6497,7 @@ String jsonString = r'''[
         "cover": {
             "id": 90429,
             "image_id": "co1xrx",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1xrx.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1xrx.jpg"
         },
         "first_release_date": 1193356800,
         "genres": [
@@ -6560,7 +6560,7 @@ String jsonString = r'''[
         "cover": {
             "id": 100621,
             "image_id": "co25n1",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co25n1.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co25n1.jpg"
         },
         "first_release_date": 925430400,
         "genres": [
@@ -6630,7 +6630,7 @@ String jsonString = r'''[
         "cover": {
             "id": 100622,
             "image_id": "co25n2",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co25n2.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co25n2.jpg"
         },
         "first_release_date": 993081600,
         "genres": [
@@ -6725,7 +6725,7 @@ String jsonString = r'''[
         "cover": {
             "id": 84634,
             "image_id": "co1tay",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1tay.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1tay.jpg"
         },
         "first_release_date": 1007251200,
         "genres": [
@@ -6907,7 +6907,7 @@ String jsonString = r'''[
         "cover": {
             "id": 84638,
             "image_id": "co1tb2",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1tb2.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1tb2.jpg"
         },
         "first_release_date": 1074556800,
         "genres": [
@@ -7005,7 +7005,7 @@ String jsonString = r'''[
         "cover": {
             "id": 118764,
             "image_id": "co2jn0",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2jn0.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2jn0.jpg"
         },
         "first_release_date": 700531200,
         "genres": [
@@ -7081,7 +7081,7 @@ String jsonString = r'''[
         "cover": {
             "id": 201322,
             "image_id": "co4bca",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co4bca.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co4bca.jpg"
         },
         "first_release_date": 904608000,
         "genres": [
@@ -7148,7 +7148,7 @@ String jsonString = r'''[
         "cover": {
             "id": 98121,
             "image_id": "co23pl",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co23pl.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co23pl.jpg"
         },
         "first_release_date": 1008288000,
         "genres": [
@@ -7210,7 +7210,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93972,
             "image_id": "co20ic",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co20ic.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co20ic.jpg"
         },
         "first_release_date": 992304000,
         "genres": [
@@ -7272,7 +7272,7 @@ String jsonString = r'''[
         "cover": {
             "id": 78439,
             "image_id": "co1oiv",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co1oiv.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1oiv.jpg"
         },
         "first_release_date": 778291200,
         "genres": [
@@ -7346,7 +7346,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93640,
             "image_id": "co2094",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2094.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2094.jpg"
         },
         "first_release_date": 859766400,
         "genres": [
@@ -7404,7 +7404,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93643,
             "image_id": "co2097",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2097.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2097.jpg"
         },
         "first_release_date": 890784000,
         "genres": [
@@ -7466,7 +7466,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93646,
             "image_id": "co209a",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209a.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209a.jpg"
         },
         "first_release_date": 916876800,
         "genres": [
@@ -7524,7 +7524,7 @@ String jsonString = r'''[
         "cover": {
             "id": 183954,
             "image_id": "co3xxu",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co3xxu.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co3xxu.jpg"
         },
         "first_release_date": 948499200,
         "genres": [
@@ -7620,7 +7620,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93644,
             "image_id": "co2098",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2098.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2098.jpg"
         },
         "first_release_date": 1033344000,
         "genres": [
@@ -7698,7 +7698,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93652,
             "image_id": "co209g",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209g.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209g.jpg"
         },
         "first_release_date": 1069027200,
         "genres": [
@@ -7773,7 +7773,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93653,
             "image_id": "co209h",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209h.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209h.jpg"
         },
         "first_release_date": 1099958400,
         "genres": [
@@ -7848,7 +7848,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93655,
             "image_id": "co209j",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209j.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209j.jpg"
         },
         "first_release_date": 1131667200,
         "genres": [
@@ -7974,7 +7974,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93656,
             "image_id": "co209k",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209k.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209k.jpg"
         },
         "first_release_date": 1162252800,
         "genres": [
@@ -8096,7 +8096,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93657,
             "image_id": "co209l",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209l.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209l.jpg"
         },
         "first_release_date": 1194912000,
         "genres": [
@@ -8209,7 +8209,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93659,
             "image_id": "co209n",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209n.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209n.jpg"
         },
         "first_release_date": 1226880000,
         "genres": [
@@ -8327,7 +8327,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93660,
             "image_id": "co209o",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209o.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209o.jpg"
         },
         "first_release_date": 1252972800,
         "genres": [
@@ -8404,7 +8404,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93662,
             "image_id": "co209q",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co209q.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co209q.jpg"
         },
         "first_release_date": 1257206400,
         "genres": [
@@ -8471,7 +8471,7 @@ String jsonString = r'''[
         "cover": {
             "id": 93681,
             "image_id": "co20a9",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co20a9.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co20a9.jpg"
         },
         "first_release_date": 1280188800,
         "genres": [
@@ -8544,7 +8544,7 @@ String jsonString = r'''[
         "cover": {
             "id": 115696,
             "image_id": "co2h9s",
-            "url": "//images.igdb.com/igdb/image/upload/t_1080p/co2h9s.jpg"
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co2h9s.jpg"
         },
         "first_release_date": 1289865600,
         "genres": [

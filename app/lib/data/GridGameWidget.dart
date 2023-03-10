@@ -18,7 +18,7 @@ class GridGameWidget extends StatelessWidget {
       // height: 128,
       child: FadeInImage(
         placeholder: MemoryImage(kTransparentImage),
-        image: NetworkImage((game.image == null)? "https://" : "https:${game.image}"),
+        image: NetworkImage((game.image == null)? "https://" : game.getImageFromId("1080p")),
         // fit: BoxFit.contain,
       )
     );
