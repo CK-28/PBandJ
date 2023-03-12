@@ -35,11 +35,12 @@ class _GamePage extends State<GamePage>{
       ),
       body: 
       Container(
-        color: Colors.blue,
-        child: SingleChildScrollView(
-          child: 
+        color: Color(0xFFF8D5BC),
+        child: ListView(
+          children:[ 
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [ 
                 Stack(
                   children: <Widget>[
@@ -47,7 +48,7 @@ class _GamePage extends State<GamePage>{
                             height: (MediaQuery.of(context).size.height / 5),
                             child: Container(
                                 //color: Colors.blueAccent,
-                                color:  Color(0xFF9CEAEF),//remove color to make it transpatrent
+                                color:  Color(0xFFEC4686),//remove color to make it transpatrent
                                 child: const Center(child: Text(""))),
                           ),
                     Row(
@@ -57,7 +58,7 @@ class _GamePage extends State<GamePage>{
                           width: 125,
                           height: 150,
                           //color: Colors.blueAccent,
-                          color: Color(0xFF9CEAEF),
+                          color: Color(0xFFEC4686),
                           child:FadeInImage(
                                   placeholder: MemoryImage(kTransparentImage),
                                   image: NetworkImage((thisGame.image == null)? "https://" : thisGame.getImageFromId("1080p")),
@@ -105,9 +106,15 @@ class _GamePage extends State<GamePage>{
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start ,
                   children: [ 
-                    const SizedBox(height:15),
-                    Row(children: [const SizedBox(width:10), Text(thisGame.genres[0].name, textAlign: TextAlign.center),],),
-                    const SizedBox(height:5),
+                    // const SizedBox(height:15),
+                    // Row(children: [const SizedBox(width:10), Text(thisGame.genres[0].name, textAlign: TextAlign.center),],),
+                    // const SizedBox(height:5),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text("Description", style: TextStyle(
+                        fontSize: 18
+                      ))
+                    ),
                     Row(
                         crossAxisAlignment: CrossAxisAlignment.start ,
                         children: [
@@ -178,7 +185,8 @@ class _GamePage extends State<GamePage>{
                 ],
               ),
             ],
-        ),
+          ),
+        ]
       ),
       ),
         
