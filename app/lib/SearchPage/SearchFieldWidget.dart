@@ -16,7 +16,7 @@ class SearchFieldState extends State<SearchFieldWidget> {
     return Container(
         margin: const EdgeInsets.only(bottom: 5),
         padding: const EdgeInsets.all(10),
-        color: Colors.amber,
+        // color: Colors.amber,
         child: Column(
           children:[
             TextField(
@@ -33,14 +33,14 @@ class SearchFieldState extends State<SearchFieldWidget> {
                 ),
               ),
             ),
-            Container(
-              alignment: FractionalOffset.centerRight,
-              child: TextButton(
-                onPressed: () => {},
-                style: TextButton.styleFrom(backgroundColor: Colors.white),
-                child: const Text("filter"),
-              ),
-            )
+            // Container(
+            //   alignment: FractionalOffset.centerRight,
+            //   child: TextButton(
+            //     onPressed: () => {},
+            //     style: TextButton.styleFrom(backgroundColor: Colors.white),
+            //     child: const Text("filter"),
+            //   ),
+            // )
           ],
       ),
     );

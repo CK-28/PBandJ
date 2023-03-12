@@ -14,17 +14,17 @@ class ListGameWidget extends StatelessWidget {
     var title =  Text(
       game.name,
       textAlign: TextAlign.center,
-      style: const TextStyle(color: Colors.white, fontSize: 25),
+      style: const TextStyle(color: Colors.black, fontSize: 25),
     );
 
     var developer = Text(
       game.developer(),
-      style: const TextStyle(color: Colors.deepOrangeAccent),
+      style: const TextStyle(color: Colors.black),
     );
 
     var gameRating = Text(
       game.stringAgeRating(),
-      style: TextStyle(color: Colors.grey[50]),
+      style: TextStyle(color: Colors.black),
     );
 
     var platformText = Text(
@@ -43,7 +43,7 @@ class ListGameWidget extends StatelessWidget {
         )
       },
       child: Card(
-        color: Colors.blueGrey,
+        color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsets.only( top: 8, right: 8, bottom: 8),
@@ -77,9 +77,10 @@ class ListGameWidget extends StatelessWidget {
                       platformText,
                       Wrap(
                         children: game.genreList().map((tag) => Card(
+                          color: Color(0xFF9CEAEF),
                           child:  Padding (
-                            padding: const EdgeInsets.all(3),
-                            child: Text(tag),
+                            padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                            child: Text(tag, style: TextStyle(color: Colors.black)),
                             ),
                           ),
                         ).take(5).toList(), //Tags go here

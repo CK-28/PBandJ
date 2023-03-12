@@ -18,8 +18,9 @@ class SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
-      child:Column(
+    return  Container(
+      color: Color(0xFFF8D5BC),
+      child: Column(
         children: [
           SearchFieldWidget(), //Search section
           SearchGamesListWidget(games: games),
