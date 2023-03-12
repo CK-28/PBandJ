@@ -17,19 +17,19 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     });
   }
 
-    // Loads page content based on 
-    Widget _loadContent() {
-        switch (_selectedIndex) {
-            case 0:
-                return(HomePage());
-            case 1:
-                return(SearchPage());
-            case 2:
-                return(Text("Profile page"));
-            default:
-                return(Text("Something has gone very wrong"));
-        }
-     }
+  // Loads page content based on
+  Widget _loadContent() {
+    switch (_selectedIndex) {
+      case 0:
+        return (HomePage());
+      case 1:
+        return (SearchPage());
+      case 2:
+        return (Text("Profile page"));
+      default:
+        return (Text("Something has gone very wrong"));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +54,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
         child: Column(
           // Important: Remove any padding from the ListView
           children: [
-            Expanded(
-                child: Column(
+            Column(
               children: [
                 Container(
                   height: 60,
@@ -68,7 +67,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(Icons.switch_left),
+                  trailing: Icon(Icons.switch_left),
                   title: const Text('Light/Dark Mode'),
                   onTap: () {
                     // Update the state of the app
@@ -114,14 +113,14 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                   },
                 ),
               ],
-            )),
+            ),
             Container(
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Align(
                   alignment: FractionalOffset.bottomCenter,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Divider(),
                       ElevatedButton(
