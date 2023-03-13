@@ -53,27 +53,26 @@ class Game {
   }
 
   String stringAgeRating() {
-    var name = "Age Rating:";
+    // var name = "Age Rating:";
     switch(ageRating) {
       case 6:
-        return "$name RP";
+        return "RP";
       case 7:
-        return "$name EC";
+        return "EC";
       case 8:
-        return "$name E";
+        return "E";
       case 9:
-        return "$name E10";
+        return "E10";
       case 10:
-        return "$name T";
+        return "T";
       case 11:
-        return "$name M";
+        return "M";
       case 12:
-        return "$name AO";
+        return "AO";
       default:
-        return "$name N/A";
+        return "N/A";
     }
   }
-
 
   /**
    * sizes are as follows:

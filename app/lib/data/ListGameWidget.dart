@@ -42,53 +42,66 @@ class ListGameWidget extends StatelessWidget {
             MaterialPageRoute(builder: (context) => GamePage(game: game))
         )
       },
-      child: Card(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Padding(
-          padding: const EdgeInsets.only( top: 8, right: 8, bottom: 8),
-          child: Row(
-            mainAxisSize: (isSmall)? MainAxisSize.min : MainAxisSize.max,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                spreadRadius: 0.5,
+                blurRadius: 5,
+                offset: const Offset(0, 5),
+              ),
+            ]
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only( top: 8, right: 8, bottom: 8),
+            child: Row(
+              mainAxisSize: (isSmall)? MainAxisSize.min : MainAxisSize.max,
 
-            children: [
-                Column(
-                  children: [
-                    Center(
-                      child: FadeInImage(
-                          placeholder: MemoryImage(kTransparentImage),
-                          image: NetworkImage((game.imageId == null)? "https://" :  game.getImageFromId("1080p")),
-                          width: imageDimensions,
-                          height: imageDimensions,
-                          fit: BoxFit.contain,
-                      ),
-                    ),
-                    if(isSmall) title,
-                  ],
-                ),
-                if(!isSmall) //Content for larger widget
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment:CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                  Column(
                     children: [
-                      title,
-                      developer,
-                      gameRating,
-                      platformText,
-                      Wrap(
-                        children: game.genreList().map((tag) => Card(
-                          color: Color(0xFF9CEAEF),
-                          child:  Padding (
-                            padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                            child: Text(tag, style: TextStyle(color: Colors.black)),
-                            ),
-                          ),
-                        ).take(5).toList(), //Tags go here
+                      Center(
+                        child: FadeInImage(
+                            placeholder: MemoryImage(kTransparentImage),
+                            image: NetworkImage((game.imageId == null)? "https://" :  game.getImageFromId("1080p")),
+                            width: imageDimensions,
+                            height: imageDimensions,
+                            fit: BoxFit.contain,
+                        ),
                       ),
+                      if(isSmall) title,
                     ],
                   ),
-                ),
-            ],
+                  if(!isSmall) //Content for larger widget
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment:CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        title,
+                        developer,
+                        gameRating,
+                        platformText,
+                        Wrap(
+                          children: game.genreList().map((tag) => Card(
+                            color: Color(0xFF9CEAEF),
+                            child:  Padding (
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(tag, style: TextStyle(color: Colors.black)),
+                              ),
+                            ),
+                          ).take(5).toList(), //Tags go here
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            )
           )
         )
       ),
