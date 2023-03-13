@@ -234,6 +234,8 @@ class _GamePage extends State<GamePage>{
 
     int _selectedIndex = 0;
 
+    var stringRating = (thisGame.rating != null) ? thisGame.rating!.toStringAsFixed(2): "N/A";
+
     void _onItemTapped(int index) {
       setState(() {
         _selectedIndex = index;
@@ -290,8 +292,7 @@ class _GamePage extends State<GamePage>{
                                 fontSize: 16
                               )),
                               Text("Release Date: " + dateFormat.format(thisGame.release)),
-                              SizedBox(height: 50),
-                              
+                              Text("Platforms: ${thisGame.platformList().take(5).join(", ")}"),
                             ]
                           )
                         ),
@@ -311,31 +312,42 @@ class _GamePage extends State<GamePage>{
                     Row(
                         crossAxisAlignment: CrossAxisAlignment.start ,
                         children: [
-                        const SizedBox(width:10),
-                        Stack(
-                          children: <Widget>[
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height / 2 - 50,
-                              width: MediaQuery.of(context).size.width - (MediaQuery.of(context).size.width/3),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  // color: Color(0xFFCE9164),
-                                ),
-                                padding: EdgeInsets.all(10),
-                                child: Text(thisGame.summary)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            child: Container( // needs to be an expanded
+                              height: 400,
+                              width: 275,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    spreadRadius: 0.5,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ]
                               ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width:15),
+                              padding: EdgeInsets.all(10),
+                              child: Text(thisGame.summary)
+                            )
+                          ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(50)),
                                 color: Color(0xFFCE9164),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    spreadRadius: 0.5,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ]
                               ),
                               padding: EdgeInsets.all(5),
                               width: 100,
@@ -344,7 +356,7 @@ class _GamePage extends State<GamePage>{
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text("Review Score:", textAlign: TextAlign.center),
-                                  Text(thisGame.rating.toString(), textAlign: TextAlign.center, style: TextStyle(
+                                  Text(stringRating, textAlign: TextAlign.center, style: TextStyle(
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold
                                   ))
@@ -353,9 +365,17 @@ class _GamePage extends State<GamePage>{
                             ),
                             SizedBox(height:30),
                             Container(
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(50)),
                                 color: Color(0xFFCE9164),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    spreadRadius: 0.5,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ]
                               ),                              
                               padding: const EdgeInsets.all(5),
                               width: 100,
@@ -375,18 +395,34 @@ class _GamePage extends State<GamePage>{
                         ) 
                       ],
                     ),
-                    Wrap(
-                      children: [
-                        for(String t in tags)
-                          Card(
-                            color: Color(0xFF9CEAEF),
-                            child: Padding(
+                    Container(
+                      width: 350,
+                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      child: Wrap( 
+                        children: [
+                          for(String t in tags)
+                            Padding(
+                              padding: EdgeInsets.all(5),
+                              child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                                color: Color(0xFF9CEAEF),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    spreadRadius: 0.5,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ]
+                              ),       
                               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                               child: Text(t, textAlign: TextAlign.center)
-                            )
-                          ),               
-                      ],
-                    ),         
+                            ),            
+                          ),
+                        ],
+                      ),       
+                    )                      
                   ],
                 ),
               ],

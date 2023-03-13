@@ -23,7 +23,7 @@ class ListGameWidget extends StatelessWidget {
     );
 
     var gameRating = Text(
-      game.stringAgeRating(),
+      "Age Rating: " + game.stringAgeRating(),
       style: TextStyle(color: Colors.black),
     );
 
