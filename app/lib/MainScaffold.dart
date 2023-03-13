@@ -36,7 +36,12 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF875632),
-        title: Text("PB & J"),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            "assets/logo/logo.png",
+          ),
+        ),
         actions: [
           Builder(builder: (context) {
             return IconButton(
