@@ -53,7 +53,6 @@ class Game {
   }
 
   String stringAgeRating() {
-    // var name = "Age Rating:";
     switch(ageRating) {
       case 6:
         return "RP";
@@ -154,19 +153,21 @@ class Platform {
   final int id;
   final String? abbr;
   final String name;
+  final String? platformFamily;
 
   String shortestName() {
 
     return (abbr == null)? name: abbr!;
   }
 
-  Platform({required this.id, required this.name, required this.abbr});
+  Platform({required this.id, required this.name, required this.abbr, required this.platformFamily});
 
   factory Platform.fromJson(Map<String, dynamic> json) {
     return Platform(
         id: json["id"],
         name: json["name"],
         abbr: json["abbreviation"],
+        platformFamily: json["platform_family"]["name"],
     );
   }
 }
