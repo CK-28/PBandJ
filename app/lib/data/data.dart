@@ -9423,7 +9423,6 @@ String jsonString = r'''[
                 "name": "PC (Microsoft Windows)"
             }
         ],
-        "status": 5,
         "summary": "Need for Speed: World was the fifteenth installment in the long-running racing video game Need for Speed franchise published by Electronic Arts. This iteration was co-developed by EA Black Box (rebranded Quicklime Games before closing in 2013) and EA Singapore. It was the first freemium MMORG in the Need for Speed series (though Motor City Online was originally conceived as a Need for Speed game) and was available on Microsoft Windows. World was released worldwide on July 27, 2010. However, people who ordered a \"Starter Pack\" had an early \"head-start\" in the game, which started on July 20, 2010.\nNeed for Speed: World, along with other EA free-to-play titles Battlefield Heroes, Battlefield Play4Free, and FIFA World, went offline on July 14, 2015."
     },
     {

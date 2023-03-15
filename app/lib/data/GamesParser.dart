@@ -20,7 +20,7 @@ class GameApiParser {
   final String fields = "fields name, age_ratings.category, age_ratings.rating, "
       "aggregated_rating, cover.url, cover.image_id, first_release_date, "
       "genres.name, involved_companies.company.name, involved_companies.developer,"
-      " summary, status, platforms.name, platforms.abbreviation, "
+      " summary, platforms.name, platforms.abbreviation, "
       "platforms.category, platforms.platform_family.name;\n";
   final String limit = "limit 100;\n";
 
