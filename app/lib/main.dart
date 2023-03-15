@@ -1,12 +1,19 @@
-import 'package:app/data/ListGameWidget.dart';
-import 'package:app/data/GamesParser.dart';
+import 'package:app/State/ReduxStore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:redux/redux.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import './models/GameModel.dart';
 import './MainScaffold.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  final store = Store<AppState>(
+    reducer,
+    initialState: AppState.initialState(),
+  );
+
+  runApp(StoreProvider(store: store, child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
