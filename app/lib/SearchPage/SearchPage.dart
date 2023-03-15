@@ -17,7 +17,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class SearchPageState extends State<SearchPage> {
-  // Future<List<Game>> games = gamesParser();
 
   @override
   Widget build(BuildContext context) {

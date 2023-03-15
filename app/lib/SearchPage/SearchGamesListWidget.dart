@@ -8,18 +8,19 @@ class SearchGamesListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return ListGameWidget(
-            game: games[index],
-            isSmall: false, //may need to be small if on smaller screen as the tags can overflow and throw errors on the screen
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
-        itemCount: games.length,
-      ),
-    );
+    return (games.length > 0) ?
+      Flexible(
+          child: ListView.separated(
+            itemBuilder: (BuildContext context, int index) {
+              return ListGameWidget(
+                game: games[index],
+                isSmall: false, //may need to be small if on smaller screen as the tags can overflow and throw errors on the screen
+              );
+            },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+          itemCount: games.length,
+        ),
+      ) : Center(child: Text("Empty"));
   }
 }
 

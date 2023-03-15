@@ -90,8 +90,6 @@ class GameApiParser {
 
     String body = fieldString + search + filtersString + limit;
 
-    print(body);
-
     var res = await http.post(
       Uri.parse(url),
       headers: <String, String> {

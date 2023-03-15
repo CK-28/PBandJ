@@ -29,7 +29,9 @@ class Game {
 
 
   String developer() {
-    return companies.where((company) => company.developer).first.name;
+    var developer = companies.where((company) => company.developer);
+
+    return (developer.isNotEmpty)? developer.first.name: "Developer Unlisted";
   }
 
   List<String> tags () {
@@ -96,8 +98,11 @@ class Game {
   }
 
   factory Game.fromJson(Map<String, dynamic> json) {
+    var genres = <Genre>[];
+    if(json["genres"] != null) {
+      genres = List<Genre>.from(json["genres"].map((genre) => Genre.fromJson(genre)));
+    }
 
-    var genres = List<Genre>.from(json["genres"].map((genre) => Genre.fromJson(genre)));
     var companies = List<Company>.from(json["involved_companies"].map((company) => Company.fromJson(company)));
     var ageRating = json["age_ratings"]
         .where((areaRating) => (areaRating["category"] == 1))
