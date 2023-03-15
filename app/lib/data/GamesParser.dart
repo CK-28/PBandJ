@@ -75,17 +75,22 @@ class GameApiParser {
     return filter;
   }
 
-  /* Future<List<Game>> */
-    searchGames(String title, bool isRestricted) async {
+  List<Game> gamesParser(String body) {
+    return List<Game>.from(
+        json.decode(body).map((game) => Game.fromJson(game))
+    );
+  }
+
+  Future<List<Game>> searchGames(String title, bool isRestricted, List<String> platforms) async {
     final String search = (title.isNotEmpty) ? "search \"$title\";\n": "";
 
     final String fieldString = "fields ${fields.join(", ")};\n";
 
-    final String filtersString = filterString(buildFilter(isRestricted, []));
+    final String filtersString = filterString(buildFilter(isRestricted, platforms));
 
     String body = fieldString + search + filtersString + limit;
 
-
+    print(body);
 
     var res = await http.post(
       Uri.parse(url),
@@ -97,6 +102,10 @@ class GameApiParser {
       body: body,
     );
 
-
+    if (res.statusCode == 200) {
+      return gamesParser(res.body);
+    } else {
+      throw Exception("Games were not able to be reached");
+    }
   }
 }
