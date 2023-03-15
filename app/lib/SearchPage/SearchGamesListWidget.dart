@@ -20,7 +20,12 @@ class SearchGamesListWidget extends StatelessWidget {
           separatorBuilder: (BuildContext context, int index) => const Divider(),
           itemCount: games.length,
         ),
-      ) : Center(child: Text("Empty"));
+      ) : const Center(
+        child: Text(
+          "No Games Found",
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        )
+      );
   }
 }
 
