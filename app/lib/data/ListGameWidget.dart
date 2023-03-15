@@ -68,7 +68,12 @@ class ListGameWidget extends StatelessWidget {
                       Center(
                         child: FadeInImage(
                             placeholder: MemoryImage(kTransparentImage),
-                            image: NetworkImage((game.imageId == null)? "https://" :  game.getImageFromId("1080p")),
+                            image: NetworkImage((game.imageId == null || game.imageId!.isEmpty)?
+                            "https://images.igdb.com/igdb/image/upload/t_1080p/nocover.png":
+                            game.getImageFromId("1080p")),
+                            imageErrorBuilder:(context, exception, stackTrace) {
+                              return const Text("Image error");
+                            },
                             width: imageDimensions,
                             height: imageDimensions,
                             fit: BoxFit.contain,

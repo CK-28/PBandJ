@@ -22,10 +22,6 @@ class GridGameWidget extends StatelessWidget {
       color: Color(0xFFF8D5BC),
       child: GestureDetector(
         child: Container(
-          child: FadeInImage(
-            placeholder: MemoryImage(kTransparentImage),
-            image: NetworkImage((game.image == null)? "https://" : game.getImageFromId("1080p")),
-          ),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -35,6 +31,12 @@ class GridGameWidget extends StatelessWidget {
                 offset: const Offset(3, 5),
               ),
             ]
+          ),
+          child: FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
+            image: NetworkImage((game.imageId == null || game.imageId!.isEmpty)?
+            "https://images.igdb.com/igdb/image/upload/t_1080p/nocover.png":
+            game.getImageFromId("1080p")),
           ),
         ),
         onTap: () {
