@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import '../State/ReduxStore.dart';
+import '../State/Actions.dart' as act;
 
 class SearchFieldWidget extends StatefulWidget {
   const SearchFieldWidget({super.key});
@@ -13,36 +17,32 @@ class SearchFieldState extends State<SearchFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.only(bottom: 5),
-        padding: const EdgeInsets.all(10),
-        // color: Colors.amber,
-        child: Column(
-          children:[
-            TextField(
-              obscureText: false,
-              controller: _controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Search',
-                fillColor: Colors.white,
-                filled: true,
-                suffixIcon: IconButton(
-                    onPressed: () => {_controller.clear()},
-                    icon: Icon(Icons.search),
+    return StoreConnector<AppState, Function(DataAction action)>(
+        converter: (Store<AppState> store) => (action) => {store.dispatch(action)},
+        builder: (storeContext, callback) {
+          return Container(
+          margin: const EdgeInsets.only(bottom: 5),
+          padding: const EdgeInsets.all(10),
+          child: Column(
+              children:[
+                TextField(
+                  obscureText: false,
+                  controller: _controller,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Search',
+                    fillColor: Colors.white,
+                    filled: true,
+                    suffixIcon: IconButton(
+                      onPressed: () => callback(DataAction(act.Actions.UpdateSearch, _controller.text)),
+                      icon: Icon(Icons.search),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-            // Container(
-            //   alignment: FractionalOffset.centerRight,
-            //   child: TextButton(
-            //     onPressed: () => {},
-            //     style: TextButton.styleFrom(backgroundColor: Colors.white),
-            //     child: const Text("filter"),
-            //   ),
-            // )
-          ],
-      ),
+          );
+      }
     );
   }
 }

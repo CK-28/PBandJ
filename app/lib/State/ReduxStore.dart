@@ -1,15 +1,9 @@
 
 import 'package:flutter/material.dart';
-
-enum Actions {
-  UpdateSearch,
-  AddPlatform,
-  RemovePlatform,
-  ToggleAgeRestriction,
-}
+import 'Actions.dart' as act;
 
 class DataAction {
-  final Actions action;
+  final act.Actions action;
   final data;
 
   DataAction(this.action, this.data);
@@ -29,17 +23,17 @@ class AppState {
 
 AppState reducer(AppState prevState, action) {
   switch(action.action) {
-    case Actions.UpdateSearch:
+    case act.Actions.UpdateSearch:
       return AppState(action.data, prevState.platforms, prevState.isRestricted);
-    case Actions.AddPlatform:
+    case act.Actions.AddPlatform:
       var platforms = List<String>.from(prevState.platforms);
       platforms.add(action.data);
       return AppState(prevState.search, platforms, prevState.isRestricted);
-    case Actions.RemovePlatform:
+    case act.Actions.RemovePlatform:
       var platforms = List<String>.from(prevState.platforms);
       platforms.remove(action.data);
       return AppState(prevState.search, prevState.platforms, prevState.isRestricted);
-    case Actions.ToggleAgeRestriction:
+    case act.Actions.ToggleAgeRestriction:
       return AppState(prevState.search, prevState.platforms, !prevState.isRestricted);
     default:
       return prevState;

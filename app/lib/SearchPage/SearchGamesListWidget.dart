@@ -8,7 +8,7 @@ class SearchGamesListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (games.length > 0) ?
+    return (games.isNotEmpty) ?
       Flexible(
           child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
