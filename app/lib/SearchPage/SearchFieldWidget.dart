@@ -13,7 +13,7 @@ class SearchFieldWidget extends StatefulWidget {
 
 class SearchFieldState extends State<SearchFieldWidget> {
 
-  var _controller = TextEditingController();
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,24 +23,38 @@ class SearchFieldState extends State<SearchFieldWidget> {
           return Container(
           margin: const EdgeInsets.only(bottom: 5),
           padding: const EdgeInsets.all(10),
-          child: Column(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:[
-                TextField(
-                  obscureText: false,
-                  controller: _controller,
-                  textInputAction: TextInputAction.search,
-                  onSubmitted: (value) {
-                    callback(DataAction(act.Actions.UpdateSearch, value));
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Search',
-                    fillColor: Colors.white,
-                    filled: true,
-                    suffixIcon: IconButton(
-                      onPressed: () => callback(DataAction(act.Actions.UpdateSearch, _controller.text)),
-                      icon: Icon(Icons.search),
+               Flexible(
+                  child: TextField(
+                    obscureText: false,
+                    controller: _controller,
+                    textInputAction: TextInputAction.search,
+                    onSubmitted: (value) {
+                      callback(DataAction(act.Actions.UpdateSearch, value));
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Search',
+                      fillColor: Colors.white,
+                      filled: true,
+                      suffixIcon: IconButton(
+                        onPressed: () => callback(DataAction(act.Actions.UpdateSearch, _controller.text)),
+                        icon: Icon(Icons.search),
+                      ),
                     ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: IconButton(
+                    onPressed: () => {},
+                    icon: Icon(Icons.filter_alt),
                   ),
                 ),
               ],
