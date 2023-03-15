@@ -17,11 +17,14 @@ class GameApiParser {
   final String authKey = "g1rswu5afmzbzpzdq5r96yktto4bgx";
   final String clientID = "lqiomvwwy2kadxol8y1ghb5swht624";
   //Body
-  final String fields = "fields name, age_ratings.category, age_ratings.rating, "
-      "aggregated_rating, cover.url, cover.image_id, first_release_date, "
-      "genres.name, involved_companies.company.name, involved_companies.developer,"
-      " summary, platforms.name, platforms.abbreviation, "
-      "platforms.category, platforms.platform_family.name;\n";
+
+  final List<String> fields = [
+    "name", "age_ratings.category", "age_ratings.rating", "aggregated_rating",
+    "cover.url", "cover.image_id", "first_release_date", "genres.name",
+    "involved_companies.company.name", "involved_companies.developer",
+    "summary", "platforms.name", "platforms.abbreviation", "platforms.category",
+    "platforms.platform_family.name"
+  ];
   final String limit = "limit 100;\n";
 
 
@@ -73,10 +76,14 @@ class GameApiParser {
   }
 
   /* Future<List<Game>> */
-    searchGames(String title) async {
+    searchGames(String title, bool isRestricted) async {
     final String search = (title.isNotEmpty) ? "search \"$title\";\n": "";
 
-    String body = fields + search  + filterString(buildFilter(true, [])) + limit ;
+    final String fieldString = "fields ${fields.join(", ")};\n";
+
+    final String filtersString = filterString(buildFilter(isRestricted, []));
+
+    String body = fieldString + search + filtersString + limit;
 
 
 
@@ -89,8 +96,6 @@ class GameApiParser {
       },
       body: body,
     );
-
-
 
 
   }

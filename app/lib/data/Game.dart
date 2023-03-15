@@ -167,7 +167,7 @@ class Platform {
         id: json["id"],
         name: json["name"],
         abbr: json["abbreviation"],
-        platformFamily: json["platform_family"]["name"],
+        platformFamily: json["platform_family"]?["name"],
     );
   }
 }
