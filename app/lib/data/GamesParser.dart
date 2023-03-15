@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:app/data/data.dart';
 import 'package:http/http.dart' as http;
 
+//TODO: remove after migrating all data to remote
 List<Game> gamesParser() {
   return List<Game>.from(
     json.decode(jsonString).map((game) => Game.fromJson(game))

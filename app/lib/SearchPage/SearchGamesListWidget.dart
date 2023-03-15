@@ -1,4 +1,4 @@
-import 'package:app/data/ListGameWidget.dart';
+import 'package:app/SearchPage/ListGameWidget.dart';
 import 'package:flutter/material.dart';
 import '../data/Game.dart';
 

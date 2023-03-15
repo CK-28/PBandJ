@@ -28,6 +28,10 @@ class SearchFieldState extends State<SearchFieldWidget> {
                 TextField(
                   obscureText: false,
                   controller: _controller,
+                  textInputAction: TextInputAction.search,
+                  onSubmitted: (value) {
+                    callback(DataAction(act.Actions.UpdateSearch, value));
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Search',
