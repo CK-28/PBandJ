@@ -13,12 +13,13 @@ class SearchFieldWidget extends StatefulWidget {
 
 class SearchFieldState extends State<SearchFieldWidget> {
 
-  final _controller = TextEditingController();
+
   bool _showFilter = false;
 
   @override
   Widget build(BuildContext context) {
     List<String> platforms = ["PlayStation","Xbox","Nintendo","Sega","PC"];
+    final controller = TextEditingController(text: StoreProvider.of<AppState>(context).state.search);
 
     return StoreConnector<AppState, Function(DataAction action)>(
         converter: (Store<AppState> store) => (action) => {store.dispatch(action)},
@@ -34,7 +35,7 @@ class SearchFieldState extends State<SearchFieldWidget> {
                    Flexible(
                       child: TextField(
                         obscureText: false,
-                        controller: _controller,
+                        controller: controller,
                         textInputAction: TextInputAction.search,
                         onSubmitted: (value) {
                           callback(DataAction(act.Actions.UpdateSearch, value));
@@ -45,7 +46,7 @@ class SearchFieldState extends State<SearchFieldWidget> {
                           fillColor: Colors.white,
                           filled: true,
                           suffixIcon: IconButton(
-                            onPressed: () => callback(DataAction(act.Actions.UpdateSearch, _controller.text)),
+                            onPressed: () => callback(DataAction(act.Actions.UpdateSearch, controller.text)),
                             icon: Icon(Icons.search),
                           ),
                         ),
