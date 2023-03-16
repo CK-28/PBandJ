@@ -8,11 +8,6 @@ String jsonString = r'''[
                 "rating": 11
             },
             {
-                "id": 11952,
-                "category": 2,
-                "rating": 4
-            },
-            {
                 "id": 123633,
                 "category": 4,
                 "rating": 20
@@ -21,13 +16,18 @@ String jsonString = r'''[
                 "id": 123634,
                 "category": 6,
                 "rating": 33
+            },
+            {
+                "id": 129407,
+                "category": 2,
+                "rating": 4
             }
         ],
         "aggregated_rating": 90.0,
         "cover": {
-            "id": 90967,
-            "image_id": "co1y6v",
-            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1y6v.jpg"
+            "id": 291911,
+            "image_id": "co698n",
+            "url": "//images.igdb.com/igdb/image/upload/t_thumb/co698n.jpg"
         },
         "first_release_date": 953596800,
         "genres": [
@@ -75,6 +75,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -142,6 +143,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -223,12 +225,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "In the third instalment of the Thief series, master-thief Garrett is contacted by Keeper Artemus with a mission to steal two valuable artefacts. At the same time, Garrett learns about a prophecy: the coming of a Dark Age. He embarks upon a journey to unravel a mystery that threatens the existence of the order of Keepers. Is it possible that there is a traitor in their midst?\n\nThe stealth and thievery game, Thief: Deadly Shadows comes with a number of improvements over two previous parts. Released in 2004, it left behind the aging Dark Engine, using a heavily modified Unreal engine instead. Realistic lighting effects have been implemented: each character and object now casts its own shadow. A third person's view has been made available in addition to the standard first person perspective.\n\nThe stealth system that made Thief: The Dark Project and Thief 2: The Metal Age famous is still in place. You have to stick to the shadows and avoid making noise, as guards will react to anything suspicious. It is also the first game of the series that introduced free roaming. The City, divided into several unlockable districts, is yours to explore. You can interact with the city's inhabitants: pickpocket, steal, or even mug them for loot."
@@ -302,32 +310,54 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 48,
                 "abbreviation": "PS4",
-                "name": "PlayStation 4"
+                "category": 1,
+                "name": "PlayStation 4",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 49,
                 "abbreviation": "XONE",
-                "name": "Xbox One"
+                "category": 1,
+                "name": "Xbox One",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "There is a rising tide of fear in The City. Hatred saturates every stone and whilst the rich prosper, the less fortunate face misery and repression. Ravaged with sickness and famine, they wait for something to change.\nInto this shadowy world steps Garrett, THE master thief in Thief, a reinvention of a franchise that helped define an entire genre of games. This first-person adventure features intelligent design that allows players to take full control, with freedom to choose their path through the game's levels and how they approach and overcome each challenge."
@@ -402,21 +432,29 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],
@@ -488,16 +526,23 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -564,12 +609,18 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Desperately you are called to the island of Metavira by scientist Jack Richards and his lovely daughter Brenda. You hear of their plight - the Fallow trees, their precious, medicinal sap on which countless of lives depend, are under the control of the evil and traitorous Santino. With most of the island already in his grasp, you must hand-pick a commando force of mercenaries and take back the island by force. That is, if you can...\n\nJagged Alliance features: 60 mercenaries... 60 attitudes... 60 voices; intense turn-based combat lets you plan every action; non-linear gameplay; three exciting levels of play will determine if you're as good as you think you are and a replay feature to look for Santino's Achilles heel - you'll need all the help you can get!\n\nAn exciting game design approach - role playing and strategy - puts you in the thick of the action!"
@@ -651,6 +702,7 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -729,16 +781,23 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             }
         ],
@@ -866,26 +925,35 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 34,
                 "abbreviation": "Android",
+                "category": 4,
                 "name": "Android"
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],
@@ -959,6 +1027,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -1023,11 +1092,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -1109,16 +1180,19 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -1197,11 +1271,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -1276,17 +1352,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Fallout 3 from the creators of the award-winning Oblivion, featuring one of the most realized game worlds ever created. Create any kind of character you want and explore the open wastes of post-apocalyptic Washington D.C. Every minute is a fight for survival as you encounter Super Mutants, Ghouls, Raiders and other dangers of the Wasteland. Prepare for the future.\n\nThe third game in the Fallout series, Fallout 3 is a singleplayer action role-playing game (RPG) set in a post-apocalyptic Washington DC. Combining the horrific insanity of the Cold War era theory of mutually assured destruction gone terribly wrong, with the kitschy naivety of American 1950s nuclear propaganda, Fallout 3 will satisfy both players familiar with the popular first two games in its series as well as those coming to the franchise for the first time."
@@ -1381,17 +1468,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "In this first-person Western RPG, the player takes on the role of Courier 6, barely surviving after being robbed of their cargo, shot and put into a shallow grave by a New Vegas mob boss. The Courier sets out to track down their robbers and retrieve their cargo, and winds up getting tangled in the complex ideological and socioeconomic web of the many factions and settlements of post-nuclear Nevada."
@@ -1467,11 +1565,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -1619,47 +1719,76 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 34,
                 "abbreviation": "Android",
+                "category": 4,
                 "name": "Android"
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             },
             {
                 "id": 48,
                 "abbreviation": "PS4",
-                "name": "PlayStation 4"
+                "category": 1,
+                "name": "PlayStation 4",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Max Payne, gritty ex-cop and titular hero of this third-person shooter, sets out on his own to take revenge on those who murdered his wife and child, only for the plot he's involved in to get deeper and deeper. As his guilt and trauma build, Payne finds himself in more and more impossibly unfavourable and astounding situations, which challenge his methods, his worldview, and even his existence."
@@ -1737,27 +1866,48 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Max Payne 2 is a third-person shooter, in which the player assumes the role of Max Payne, but also plays as Mona Sax in a few levels. Initially, the player's weapon is a 9mm pistol. As they progress, players access other weapons including other handguns, shotguns, submachine guns, assault rifles, sniper rifles, and hand-thrown weapons. To move the game along, the player is told what the next objective is through Max's internal monologue, in which Max iterates what his next steps should be."
@@ -1859,21 +2009,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2026,21 +2188,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2107,11 +2281,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2165,11 +2341,13 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2254,21 +2432,29 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             }
         ],
@@ -2343,11 +2529,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -2410,6 +2598,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -2455,30 +2644,36 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             },
             {
                 "id": 63,
                 "abbreviation": "Atari-ST",
+                "category": 6,
                 "name": "Atari ST/STE"
             },
             {
                 "id": 75,
                 "abbreviation": "Apple][",
+                "category": 6,
                 "name": "Apple II"
             },
             {
                 "id": 115,
+                "category": 6,
                 "name": "Apple IIGS"
             }
         ],
@@ -2532,30 +2727,36 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             },
             {
                 "id": 63,
                 "abbreviation": "Atari-ST",
+                "category": 6,
                 "name": "Atari ST/STE"
             },
             {
                 "id": 75,
                 "abbreviation": "Apple][",
+                "category": 6,
                 "name": "Apple II"
             },
             {
                 "id": 115,
+                "category": 6,
                 "name": "Apple IIGS"
             }
         ],
@@ -2605,21 +2806,25 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             },
             {
                 "id": 63,
                 "abbreviation": "Atari-ST",
+                "category": 6,
                 "name": "Atari ST/STE"
             }
         ],
@@ -2665,21 +2870,25 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             }
         ],
@@ -2737,6 +2946,7 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -2782,16 +2992,19 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2879,11 +3092,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -2958,21 +3173,25 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 34,
                 "abbreviation": "Android",
+                "category": 4,
                 "name": "Android"
             }
         ],
@@ -3056,6 +3275,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -3136,17 +3356,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Dead Space is a 2008 science fiction survival horror video game developed by EA Redwood Shores (now Visceral Games) for Microsoft Windows, PlayStation 3 and Xbox 360. The game was released on all platforms through October 2008. The game puts the player in control of an engineer named Isaac Clarke, who battles the Necromorphs, reanimated human corpses, aboard an interstellar mining ship, the USG Ishimura."
@@ -3241,17 +3472,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Three years after the Necromorph infestation aboard the USS Ishimura, Isaac Clarke awakens from a coma, confused, disoriented, and on a space station called The Sprawl. Just as his health begins to improve, The Sprawl is overrun with even more advanced forms of the alien-zombie hybrids."
@@ -3336,17 +3578,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Thomas \"Tommy\" Angelo, a taxi driver living in the 1930s in Lost Heaven (based on San Francisco and Chicago), enters a mafia gang led by Don Salieri and gets mixed up in a storyline including many plots, robberies and assassinations, later deciding to become an informant against the mob. Driven by third-person gunplay, realistic driving mechanics and advanced graphics, Mafia immerses the player into a real-world mobster story.\n\nMafia contains a much bigger city to explore than most video games of the time, with multiple forms of available transport in addition to an expansive countryside. The game received positive reviews for the Windows version, with critics praising the game as a more realistic and serious Grand Theft Auto-styled game."
@@ -3440,17 +3693,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "The storyline for Mafia II is a gritty drama and chronicles the rise of Vito Scaletta, the son of Sicilian immigrants. As the game progresses, Vito joins the Falcone crime family and becomes \"a made man\" along with his best friend Joe Barbaro."
@@ -3525,11 +3789,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -3594,12 +3860,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Several religious and political factions see an opportunity to re-shape a worldwide government to their agendas. In this techno-nightmare, take part in the dark struggle to raise the world from its own ashes.\n\nThis dynamic and innovative 1st person-action/adventure brings a level of reality unprecedented in a videogame. Biotech modifications allow players to see through walls, leap 40 feet into the air, regenerate critical body damage or render yourself radar invisible. Globe-hop to real world locations such as Seattle, Antarctica, and Cairo."
@@ -3681,21 +3953,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -3771,17 +4055,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Overlord is an action role-playing video game set in an alternate world, where the player takes the role of a resurrected warrior known as \"The Overlord\" who has control over hordes of gremlin-like creatures known as \"Minions\". The player must defeat seven corrupt ruling heroes in order to reconquer the lands and establish his lordship over its inhabitants. The game features a corruption feature, similar to that of the Fable games, but allowing the player to \"be evil... or really evil\", where certain actions and choices affect different aspects of the story and gameplay. While the Overlord is controlled in a third person perspective, the way minions are controlled brings elements of real-time strategy and upgrades bring those of role-playing games. The game uses dark humour, and is a satirical parody of the traditional fantasy setting and plot"
@@ -3847,17 +4142,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Overlord: Raising Hell is the expansion to the 2007 action role-playing game Overlord, which adds an extension to the game's single player with new levels, plot, enemies and weapons. Along with an extended story, Raising Hell also features new weapons and armor to be created in the forge of the Overlord's Tower. In the game's seriously warped fantasy world, players will become the Overlord and get first-hand experience of how absolute power corrupts absolutely."
@@ -3929,17 +4235,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Overlord II, sequel to the critically acclaimed cult hit, sees the return of the chaotic Minions and their new Dark Master. Bigger, badder and more beautifully destructive, Overlord 2 has a Glorious Empire to smash, a massive Netherworld to revive, Minion mounts to mobilize, a trio of mistresses to woo, War Machines to crush opposition and lots of cute creatures to, err... murder (and a mini-map)"
@@ -3993,7 +4310,12 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Dark Legend is a spinoff of the 2007 video game Overlord, and is set as a prequel. The gameplay is similar to Overlord, but presents some differences. While the game does not have several features of the original game or its sequel, Overlord II, it offers some new content and a new gameplay style taking advantage of the Wii controller. \n \nReviews of the game are mixed: praising the humour, story, and controls of the game, but finding problems with the animation, short game length, and lack of complexity or difficulty."
@@ -4052,7 +4374,12 @@ String jsonString = r'''[
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Meet Giblet, Blaze, Stench, and Zap - an elite Minion crew who, assisted by minion master Gnarl, get star billing in Overlord Minions, an irresistible and accessible puzzle action game, designed exclusively for Nintendo DS. In Overlord Minions, the Overlord commands the Minion team remotely. The Nintendo DS stylus becomes an extension of his evil will and every precise Touch Screen command is the player-as-Overlord directing, commanding and combining minions in battle, pointing and sweeping them to attack enemies and solving puzzles to execute his dastardly plans. Controlling the Special Farces team of four, players negotiate fiendish levels and take on a huge range of warped enemies to hunt down the Kindred, a cult dedicated to resurrecting the mighty Dragon Kin, a race of humanoid dragon hybrids, determined to replace the Overlord's despotism with their own. Extending the Overlord series' trademark humour, gameplay focuses on the mischievous physical comedy of the minion's antics and is delivered in a stylised cartoon visual style."
@@ -4114,24 +4441,29 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 118,
+                "category": 6,
                 "name": "FM Towns"
             },
             {
                 "id": 149,
+                "category": 6,
                 "name": "PC-98"
             }
         ],
@@ -4185,11 +4517,13 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             }
         ],
@@ -4249,16 +4583,19 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -4316,11 +4653,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -4386,11 +4725,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -4452,6 +4793,7 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -4517,6 +4859,7 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             }
         ],
@@ -4584,12 +4927,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "First-person WRPG and third mainline entry in the Elder Scrolls franchise in which the player arrives in the island of Vvardenfell, an exotic land plagued by disease-carrying storms and ruled by a godly Tribunal, in the Morrowind province of Tamriel, and takes part in the prophecy foretelling the second coming of Nerevar, who will supposedly save Morrowind from malicious clans both within and outside Vvardenfell."
@@ -4642,6 +4991,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -4701,6 +5051,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -4799,17 +5150,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "The Elder Scrolls IV: Oblivion, the fourth game in the Elder Scrolls story, is set within the province of Cyrodiil, the heartland and Imperial capital of Tamriel. Emperor Uriel Septim VII is assassinated in flight from his own palace, but just before he dies he passes on to you the mystic Amulet of Kings. The adventure proper begins with the quest to find Uriel's lost and illegitimate son who is the only heir to the throne. In a world where the forces of darkness seek their ultimate dominion over the ranks of man and mer alike, you alone stand between the future of Tamriel and the gates of Oblivion."
@@ -4884,11 +5246,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -4965,16 +5329,23 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -5043,26 +5414,39 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],
@@ -5144,26 +5528,39 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],
@@ -5229,21 +5626,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],
@@ -5313,16 +5722,19 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -5387,11 +5799,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -5447,21 +5861,29 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -5550,31 +5972,49 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 34,
                 "abbreviation": "Android",
+                "category": 4,
                 "name": "Android"
             }
         ],
@@ -5677,26 +6117,43 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -5818,17 +6275,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "What starts as a routine mission to an agrarian outpost quickly becomes the opening salvo in an epic war. As the newly appointed Executive Officer of the SSV Normandy, you'll assemble and lead an elite squad of heroes into battle after heart-pounding battle. Each decision you make will impact not only your fate, but the destiny of the entire galaxy in the Mass Effect trilogy.\n\nKey Features:\n\nIncredible, interactive storytelling. Create and customize your own character, from Commander Shepard's appearance and skills to a personalized arsenal. Unleash devastating abilities as you command and train. Your decisions will control the outcome of each mission, your relationships with your crew and ultimately the entire war.\n\nAn amazing universe to explore. From the massive Citadel to the harsh, radioactive landscape of the Krogan home world – the incredible breadth of the Mass Effect universe will blow you away. Travel to the farthest outposts aboard the SSV Normandy, the most technologically advanced ship in the galaxy. You'll follow the clues left by ancient civilizations, discover hidden bases with fantastic new tech and lead your hand-picked crew into explosive alien battles.\n\nEdge-of-your-seat excitement meets strategic combat. Find the perfect combination of squad-mates and weapons for each battle if you want to lead them to victory. Sun-Tzu's advice remains as pertinent in 2183 as it is today – know your enemy. You'll need different tactics for a squad of enemies with devastating biotic attacks than a heavily armored Geth Colossus so choose your teams wisely."
@@ -5927,17 +6395,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Are you prepared to lose everything to save the galaxy? You'll need to be, Commander Shephard. It's time to bring together your greatest allies and recruit the galaxy's fighting elite to continue the resistance against the invading Reapers. So steel yourself, because this is an astronomical mission where sacrifices must be made. You'll face tougher choices and new, deadlier enemies. Arm yourself and prepare for an unforgettable intergalactic adventure.\n\nGame Features:\n\nShift the fight in your favour. Equip yourself with powerful new weapons almost instantly thanks to a new inventory system. Plus, an improved health regeneration system means you'll spend less time hunting for restorative items.\n\nMake every decision matter. Divisive crew members are just the tip of the iceberg, Commander, because you'll also be tasked with issues of intergalactic diplomacy. And time's a wastin' so don't be afraid to use new prompt-based actions that let you interrupt conversations, even if they could alter the fate of your crew...and the galaxy.\n\nForge new alliances, carefully. You'll fight alongside some of your most trustworthy crew members, but you'll also get the opportunity to recruit new talent. Just choose your new partners with care because the fate of the galaxy rests on your shoulders, Commander."
@@ -6033,22 +6512,38 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 41,
                 "abbreviation": "WiiU",
-                "name": "Wii U"
+                "category": 1,
+                "name": "Wii U",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Earth is burning. The Reapers have taken over and other civilizations are falling like dominoes. Lead the final fight to save humanity and take back Earth from these terrifying machines, Commander Shepard. You'll need backup for these battles. Fortunately, the galaxy has a habit of sending unexpected species your way. Recruit team members and forge new alliances, but be prepared to say goodbye at any time as partners make the ultimate sacrifice. It's time for Commander Shepard to fight for the fate of the human race and save the galaxy. No pressure, Commander.\n\nFight smarter. Take advantage of new powers and combat moves. Shepard can now blind fire at enemies and build tougher melee attacks. Plus, when you fight as a team you can combine new biotic and tech powers to unleash devastating Power Combos.\n\nBuild the final force. Build a team from a variety of races and classes and combine their skills to overcome impossible odds. You'll be joined by newcomers like James Vega, a tough-as-nails soldier, as well as EDI, a trusted AI in a newly acquired physical form. Keep an eye out for beloved characters from your past, but beware. Some may not survive the final battle...\n\nFace off against friends. Enjoy an integrated co-op multiplayer mode and team up with friends online to liberate key conflict zones from increasingly tough opponents. Customize your warrior and earn new weapons, armor, and abilities to build war preparedness stats in your single player campaign."
@@ -6126,21 +6621,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6218,26 +6725,43 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6354,21 +6878,33 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6449,32 +6985,54 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 48,
                 "abbreviation": "PS4",
-                "name": "PlayStation 4"
+                "category": 1,
+                "name": "PlayStation 4",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 49,
                 "abbreviation": "XONE",
-                "name": "Xbox One"
+                "category": 1,
+                "name": "Xbox One",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 130,
                 "abbreviation": "Switch",
-                "name": "Nintendo Switch"
+                "category": 1,
+                "name": "Nintendo Switch",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "The game is set in a fictional City of the Future in 1959. Stubbs, a zombie who'll tug at your heartstrings and tickle your funnybone even as he's tearing the living guts right out of your body. This former traveling salesman trades in his briefcase for your braincase as the leading man in Wideload's first game, Stubbs the Zombie in \"Rebel Without a Pulse\".\n\nIn this game, players take on the role of the rebel himself Stubbs, a wisecracking Zombie who takes on an ultra-modern city of the future using nothing but his own carcass and the weapons of his possessed enemies. The game's tongue-in-cheek humor, innovative combat and strong storyline keep Stubbs the Zombie's gameplay as bizarre and unpredictable as its namesake.\n\nOn his quest, Stubbs lurches his way through numerous large and visually captivating indoor/outdoor environments in and around the gleaming city of Punchbowl, PA, a city built during the Eisenhower administration to show off the ultra-futuristic technology of the 21st century. Stubbs' brain-eating adventure brings him through bustling shopping districts and verdant farmlands to battle mad scientists, rural militiamen and the world's deadliest barbershop quartet. His enemies have shotguns, tanks, and all manner of futuristic weaponry. All Stubbs has is his own rotting corpse, a distinct lack of pain or conscience, and the ability to turn foes into zombie allies.\n\nWhat begins as one zombie's search for revenge quickly escalates into an all-out war between the living and the dead - but this time it's the zombie fighting for truth, justice and the redemption of true love. Yes, it's a love story too."
@@ -6533,11 +7091,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6608,11 +7168,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6682,11 +7244,13 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -6829,57 +7393,104 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 24,
                 "abbreviation": "GBA",
-                "name": "Game Boy Advance"
+                "category": 5,
+                "name": "Game Boy Advance",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 48,
                 "abbreviation": "PS4",
-                "name": "PlayStation 4"
+                "category": 1,
+                "name": "PlayStation 4",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 49,
                 "abbreviation": "XONE",
-                "name": "Xbox One"
+                "category": 1,
+                "name": "Xbox One",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 130,
                 "abbreviation": "Switch",
-                "name": "Nintendo Switch"
+                "category": 1,
+                "name": "Nintendo Switch",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 169,
                 "abbreviation": "Series X",
-                "name": "Xbox Series X|S"
+                "category": 1,
+                "name": "Xbox Series X|S",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             }
         ],
         "summary": "Baldur’s Gate™: Dark Alliance™ is a revolutionary action adventure with an epic tale of intrigue, fierce alliances, explosive spell effects and highly detailed creatures and environments. Baldur’s Gate™: Dark Alliance™ is a benchmark of technology and gameplay."
@@ -6963,26 +7574,43 @@ String jsonString = r'''[
             {
                 "id": 3,
                 "abbreviation": "Linux",
-                "name": "Linux"
+                "category": 4,
+                "name": "Linux",
+                "platform_family": {
+                    "id": 4,
+                    "name": "Linux"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             }
         ],
@@ -7049,22 +7677,34 @@ String jsonString = r'''[
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 16,
                 "abbreviation": "Amiga",
+                "category": 6,
                 "name": "Amiga"
             },
             {
                 "id": 29,
                 "abbreviation": "Genesis/MegaDrive",
-                "name": "Sega Mega Drive/Genesis"
+                "category": 1,
+                "name": "Sega Mega Drive/Genesis",
+                "platform_family": {
+                    "id": 3,
+                    "name": "Sega"
+                }
             },
             {
                 "id": 78,
                 "abbreviation": "segacd",
-                "name": "Sega CD"
+                "category": 1,
+                "name": "Sega CD",
+                "platform_family": {
+                    "id": 3,
+                    "name": "Sega"
+                }
             }
         ],
         "summary": "Dune is a 1992 video game, based upon Frank Herbert's science fiction novel of the same name. Developed by Cryo Interactive, is the first of the Dune computer games. Dune blended adventure with economic and military strategy, and is considered by many the most immersive Dune computer game. Loosely following the story of the novel, the game casts the player as Paul Atreides, with the ultimate goal of driving the Harkonnen from Planet Dune, while managing spice extraction, military, and later, ecology through the native Fremen tribes.\n\nAs the player progresses, his troops are equipped with weapons from \"crysknives\" to atomics, tap into Paul's latent psychic powers, and get acquainted with such characters from the book as Chani and Liet-Kynes."
@@ -7125,12 +7765,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Real-time strategy taking place in Frank Herbert's \"Dune\" universe. The game is a remake of a classic RTS game \"Dune 2\". Player can play as a commander of one of three different factions: Harkonnen, Atreides or Ordos.\n\nDo you like the feeling you get when you have won over someone? If it was something that we had really worked hard, then the fell of victory is something precious and incalculable. The game Dune 2000 could help in giving your competitive spirit a new edge. It is an updated version of the Dune II. In this game the player would have to fight for an interesting thing; the control of the spices in the galaxy. The spices control could make you the most powerful there. The player has to choose to be one of the three houses first: Atreides, Harkonnen, or Ordos.\n\nEach house has its own vice and virtue and the right selection could give the player right start to the game but he could learn as well as, later in the game with time. Once you choose a side, you to win the King’s challenge of producing the most amount of spice. It won’t be as easy as it sounds. For getting the control of the spices, the player has to fight over the other two houses by all means.\n\nDune 2000 is done with enough of stunt and live-in scenes to pep up the theme and there is a soothing sound score to add to the overall theme. It’s a game based on the Dune series book of Frank Herbert and gives the player a real pleasure of both combat and competition."
@@ -7188,12 +7834,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "In the year 10191, the Houses Atreides and Harkonnen are fighting a bloody battle for control of the sand planet Arrakis (Dune). It's only resource: Spice, giving those who possess it a very long life and greater powers. Two Atreides will survive the all-out massacre organised by Baron Harkonnen with the help of the Emperor: Jessica, the Duke's concubine and Paul, his son and heir to the throne. Dreamcatcher Games is putting you into the world of Frank Herbert's Dune."
@@ -7254,6 +7906,7 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
@@ -7308,26 +7961,39 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 13,
                 "abbreviation": "DOS",
+                "category": 4,
                 "name": "DOS"
             },
             {
                 "id": 32,
                 "abbreviation": "Saturn",
-                "name": "Sega Saturn"
+                "category": 1,
+                "name": "Sega Saturn",
+                "platform_family": {
+                    "id": 3,
+                    "name": "Sega"
+                }
             },
             {
                 "id": 50,
                 "abbreviation": "3DO",
+                "category": 1,
                 "name": "3DO Interactive Multiplayer"
             }
         ],
@@ -7382,12 +8048,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "There are three main game types. The first two are single race and tournament and the last is a knockout race. Single races allow players to become familiar with the circuits and increase their skill of any one of the six tracks. The six tracks are called Mediterranean, Mystic Peaks, Proving Grounds, Outback, North Country, and Pacific Spirit."
@@ -7444,12 +8116,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Drive some of the most exotic cars in illegal street race on many different tracks, while trying not to be caught by police!"
@@ -7502,12 +8180,18 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Just like its predecessors Need for Speed: High Stakes is an action racing game with a wide selection of exotic sports cars and many different types of tracks. The trademark Hot Pursuit mode game mode from the first game in the series is still present, where players race opponents on tracks filled with regular traffic and police cars that chase the racers. The classic pursuit mode is extended with two additional modes: Getaway and Time Trap. In Getaway the player needs to shake off the police in a set amount of time, or playing as the police trap a speeder before time runs out. In Time Trap an entire race needs to be completed before time runs out, or as the police all speeders need to be arrested. There are minor differences between the two platforms for this game mode, regarding spike strips, road blocks, and back-up. The latter for instance is unique to the PlayStation version. The Pursuit mode is available in multiplayer as well and players can take different sides or race together. \n \nIt is the first game in the series to introduce a Career mode with a set of challenges. Beating these is rewarded with trophies for unlocks, and money to spend on new cars, repairs and upgrades. In the PlayStation version the Career mode is split up into two different sets of challenges: Tournament (required races) and Special Event (optional races). High Stakes in the title refers to races where players bet their cars. In the PC version these are a part of the Career mode when the player owns more than two cars. In the PlayStation version two players can insert their memory cards and race against each other. The winner immediately receives the opponent's car and it is deleted from the loser's memory card right away. \n \nIn addition to the new game modes it is also the first game in the series to have a detailed physics models. Damage now affects both the appearance and the performance of the car for the first time."
@@ -7592,17 +8276,28 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 7,
                 "abbreviation": "PS1",
-                "name": "PlayStation"
+                "category": 1,
+                "name": "PlayStation",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 24,
                 "abbreviation": "GBA",
-                "name": "Game Boy Advance"
+                "category": 5,
+                "name": "Game Boy Advance",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Unleash the power of Porsche! Push yourself to the limit and break the will of your opponents, as you climb into the driver's seat of Destination Software's Need For Speed Porsche Unleashed racing game for your Nintendo Game Boy Advance system, sub-licensed from series originator Electronic Arts. Need for Speed Porsche Unleashed features circuit track racing, streetcar excitement, open road thrills, crashes, traffic, and more. Feel the surge of adrenaline as your own driving savvy and years of Porsche excellence come together at your fingertips for a thrilling ride at breakneck speed. Features 25 different models of Porsche cars, link cable support for four players (multiple cartridge), and cartridge save ability with four slots."
@@ -7660,22 +8355,38 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "The Need for Speed series returns, this time reverting back to the 'chase' arcade experience instead of a racing simulation. Top speed racing is the name of the game, where you must outchase not just the opposing drivers, but the cops.\n\nChoose from a selection of today's (and yesterday's) top sports cars, including the Ferrari F50, Porsche 911 and a range from the likes of Ford, Corvette, BMW, Lotus, Mercedes, Aston Martin, the McLaren F1 and a lot more.\n\nThe competitive race mode allows you to take on other drivers and beat them to the line. A selection of tracks allows you to not only dodge incoming traffic, but perform deadly jumps and stunts to receive points. These points, combined with the points recieved from your finishing position, can unlock new cars and tracks.\n\nThe Hot Pursuit mode combines all the major elements of the competitive mode with the chance to out run the cops. They will throw everything at you to try and stop you, including running you off the road, setting up road blocks and unleashing an attack helicopter equiped with missiles. Three busts by the cops ends the race."
@@ -7730,27 +8441,48 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 24,
                 "abbreviation": "GBA",
-                "name": "Game Boy Advance"
+                "category": 5,
+                "name": "Game Boy Advance",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Electronic Arts' Need For Speed series takes a note from the Fast and Furious handbook with its latest release entitled Need For Speed Underground. Purchase, race, and customize 20 different licensed cars from major manufacturers such as Honda, Mitsubishi, Toyota, Volkswagen, Nissan, and more. Race other customized cars through a detailed nighttime cityscape, dodging city traffic and navigating shortcuts all the while. Customize vehicle performance as well as your car's physical appearance, changing rims, stickers, paint job, spoilers and more. Multiple racing modes range from drift competitions, street racing, and drag racing."
@@ -7805,27 +8537,48 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Need For Speed Underground 2 takes place in Bayview after the events of Need for Speed: Underground. The prologue begins with the player driving in a Nissan Skyline R34 in Olympic City (though the racing scenes are actually in Bayview), the setting of NFS:UG. He then receives a race challenge from a rather ominous personality who offers him a spot on his crew, but \"won't take 'no' for an answer.\" The player races off — despite Samantha's warnings — only to be ambushed by a mysterious driver in a rage that totals his Skyline. The driver, who has a unique scythe tattoo, makes a call confirming the accident, and the flashback fades out."
@@ -7896,42 +8649,78 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 24,
                 "abbreviation": "GBA",
-                "name": "Game Boy Advance"
+                "category": 5,
+                "name": "Game Boy Advance",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 38,
                 "abbreviation": "PSP",
-                "name": "PlayStation Portable"
+                "category": 5,
+                "name": "PlayStation Portable",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "The player arrives in Rockport City, driving a racing version of the BMW M3 GTR (E46). Following Mia Townsend (played by Josie Maran), the player proves his driving prowess as he is pursued by a veteran police officer named Sergeant Cross (played by Dean McKenzie), who vows to take down the player and end street racing in Rockport.\nRaces seem to be in the player's favor until a particular group of racers, led by the game's antagonist, Clarence \"Razor\" Callahan (played by Derek Hamilton), sabotages and win the player's car in a race."
@@ -8018,42 +8807,74 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 11,
                 "abbreviation": "XBOX",
-                "name": "Xbox"
+                "category": 1,
+                "name": "Xbox",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 14,
                 "abbreviation": "Mac",
+                "category": 4,
                 "name": "Mac"
             },
             {
                 "id": 21,
                 "abbreviation": "NGC",
-                "name": "Nintendo GameCube"
+                "category": 1,
+                "name": "Nintendo GameCube",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Need for Speed: Carbon, also known as NFS Carbon or NFSC, is an Electronic Arts video game in the Need for Speed series. It is the tenth installment and was the first game in the series to gain the PEGI rating of 12+. The game is a sequel to 2005's Need for Speed: Most Wanted."
@@ -8136,32 +8957,58 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 38,
                 "abbreviation": "PSP",
-                "name": "PlayStation Portable"
+                "category": 5,
+                "name": "PlayStation Portable",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Compete at the highest level of street racing with Need for Speed ProStreet. It’s no longer good enough to simply rule your local neighborhood; you need to dominate on a global stage. Build the ultimate battle machine, take it to multi-disciplinary showdowns and pit your skills and reputation against the world’s best street racers."
@@ -8269,37 +9116,68 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 8,
                 "abbreviation": "PS2",
-                "name": "PlayStation 2"
+                "category": 1,
+                "name": "PlayStation 2",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 38,
                 "abbreviation": "PSP",
-                "name": "PlayStation Portable"
+                "category": 5,
+                "name": "PlayStation Portable",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "The Need for Speed series got another dose of Hollywood magic with the release of Undercover. Take on jobs and compete in races to prove yourself as you infiltrate and take down an international crime syndicate.\n\nAs you win each race, you’ll go deeper into the underworld web that rules Tri-City… and then tear it apart right under their noses. You make the calls, but don’t break your cover: inside the car or out of it, one mistake here could be your last."
@@ -8371,22 +9249,38 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 38,
                 "abbreviation": "PSP",
-                "name": "PlayStation Portable"
+                "category": 5,
+                "name": "PlayStation Portable",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             }
         ],
         "summary": "Need for Speed SHIFT is an award-winning authentic racing game that combines the true driver’s experience with real-world physics, pixel-perfect car models, and a wide range of authentic race tracks. Need for Speed SHIFT takes players in a different direction to create a simulation experience that replicates the true feeling of driving high-end performance cars.\n\nPlayers are thrust into the loud, visceral, intense, athletic experience of racing a car on the edge of control from the driver’s perspective through the combination of perception based G-forces, the hyper reality of the cockpit view, and the brutal experience of a first person crash dynamic. Need for Speed SHIFT features an accurate, accessible physics-based driving model that allows you to feel every impact, every change of track surface and every last bit of grip as you push yourself to the edge."
@@ -8448,12 +9342,22 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 20,
                 "abbreviation": "NDS",
-                "name": "Nintendo DS"
+                "category": 5,
+                "name": "Nintendo DS",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             }
         ],
         "summary": "Need for Speed: Nitro is the fourteenth installment in the long-running racing video game franchise Need for Speed. It was published by Electronic Arts for the Wii and Nintendo DS platforms, It is also the only game to date in the franchise to not be made for PC. It was announced in January as part of a three-game announcement that includes Need for Speed: Shift and Need for Speed: World. The game was developed by EA Montreal who have previous experience with Nintendo titles, although the DS version was developed separately by Firebrand Games' Florida studio. An improved version of the DS edition of the game, Need for Speed: Nitro-X, was released for DSiWare in November 2010."
@@ -8515,10 +9419,10 @@ String jsonString = r'''[
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             }
         ],
-        "status": 5,
         "summary": "Need for Speed: World was the fifteenth installment in the long-running racing video game Need for Speed franchise published by Electronic Arts. This iteration was co-developed by EA Black Box (rebranded Quicklime Games before closing in 2013) and EA Singapore. It was the first freemium MMORG in the Need for Speed series (though Motor City Online was originally conceived as a Need for Speed game) and was available on Microsoft Windows. World was released worldwide on July 27, 2010. However, people who ordered a \"Starter Pack\" had an early \"head-start\" in the game, which started on July 20, 2010.\nNeed for Speed: World, along with other EA free-to-play titles Battlefield Heroes, Battlefield Play4Free, and FIFA World, went offline on July 14, 2015."
     },
     {
@@ -8592,26 +9496,43 @@ String jsonString = r'''[
             {
                 "id": 5,
                 "abbreviation": "Wii",
-                "name": "Wii"
+                "category": 1,
+                "name": "Wii",
+                "platform_family": {
+                    "id": 5,
+                    "name": "Nintendo"
+                }
             },
             {
                 "id": 6,
                 "abbreviation": "PC",
+                "category": 4,
                 "name": "PC (Microsoft Windows)"
             },
             {
                 "id": 9,
                 "abbreviation": "PS3",
-                "name": "PlayStation 3"
+                "category": 1,
+                "name": "PlayStation 3",
+                "platform_family": {
+                    "id": 1,
+                    "name": "PlayStation"
+                }
             },
             {
                 "id": 12,
                 "abbreviation": "X360",
-                "name": "Xbox 360"
+                "category": 1,
+                "name": "Xbox 360",
+                "platform_family": {
+                    "id": 2,
+                    "name": "Xbox"
+                }
             },
             {
                 "id": 39,
                 "abbreviation": "iOS",
+                "category": 4,
                 "name": "iOS"
             }
         ],

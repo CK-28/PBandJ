@@ -276,7 +276,9 @@ class _GamePage extends State<GamePage>{
                           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                           child:FadeInImage(
                               placeholder: MemoryImage(kTransparentImage),
-                              image: NetworkImage((thisGame.image == null)? "https://" : thisGame.getImageFromId("1080p")),
+                            image: NetworkImage((thisGame.imageId == null || thisGame.imageId!.isEmpty)?
+                            "https://images.igdb.com/igdb/image/upload/t_1080p/nocover.png":
+                            thisGame.getImageFromId("1080p")),
                               width: 135,
                           )           
                         ),

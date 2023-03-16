@@ -1,5 +1,4 @@
 
-
 class Game {
   final int id;
   final String name;
@@ -29,7 +28,9 @@ class Game {
 
 
   String developer() {
-    return companies.where((company) => company.developer).first.name;
+    var developer = companies.where((company) => company.developer);
+
+    return (developer.isNotEmpty)? developer.first.name: "Developer Unlisted";
   }
 
   List<String> tags () {
@@ -53,7 +54,6 @@ class Game {
   }
 
   String stringAgeRating() {
-    // var name = "Age Rating:";
     switch(ageRating) {
       case 6:
         return "RP";
@@ -98,22 +98,22 @@ class Game {
 
   factory Game.fromJson(Map<String, dynamic> json) {
 
-    var genres = List<Genre>.from(json["genres"].map((genre) => Genre.fromJson(genre)));
-    var companies = List<Company>.from(json["involved_companies"].map((company) => Company.fromJson(company)));
+    var genres = List<Genre>.from(json["genres"]?.map((genre) => Genre.fromJson(genre)) ?? <Genre>[]);
+    var companies = List<Company>.from(json["involved_companies"]?.map((company) => Company.fromJson(company)) ?? <Company>[]);
     var ageRating = json["age_ratings"]
         .where((areaRating) => (areaRating["category"] == 1))
         .toList().first["rating"];
-    var platforms = List<Platform>.from(json["platforms"].map((platform) => Platform.fromJson(platform)));
+    var platforms = List<Platform>.from(json["platforms"]?.map((platform) => Platform.fromJson(platform))?? <Platform>[]);
 
     return Game(
         id: json['id'],
         name: json["name"],
-        image: json["cover"]["url"],
-        imageId: json["cover"]["image_id"],
-        summary: json["summary"],
+        image: json["cover"]?["url"],
+        imageId: json["cover"]?["image_id"],
+        summary: json["summary"] ?? "N/A",
         rating: json["aggregated_rating"],
         ageRating: ageRating,
-        release: DateTime.fromMillisecondsSinceEpoch(json["first_release_date"]),
+        release: DateTime.fromMillisecondsSinceEpoch(json["first_release_date"] ?? 0), //default to base time if no time found
         genres: genres,
         companies: companies,
         platforms: platforms,
@@ -154,19 +154,21 @@ class Platform {
   final int id;
   final String? abbr;
   final String name;
+  final String? platformFamily;
 
   String shortestName() {
 
     return (abbr == null)? name: abbr!;
   }
 
-  Platform({required this.id, required this.name, required this.abbr});
+  Platform({required this.id, required this.name, required this.abbr, required this.platformFamily});
 
   factory Platform.fromJson(Map<String, dynamic> json) {
     return Platform(
         id: json["id"],
         name: json["name"],
         abbr: json["abbreviation"],
+        platformFamily: json["platform_family"]?["name"],
     );
   }
 }

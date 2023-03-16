@@ -53,6 +53,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
           })
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: _loadContent(),
       endDrawer: Drawer(
         // color: Color(0xFF875632),
