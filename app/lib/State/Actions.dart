@@ -1,6 +1,5 @@
 enum Actions {
   UpdateSearch,
-  AddPlatform,
-  RemovePlatform,
+  UpdatePlatform,
   ToggleAgeRestriction,
 }
