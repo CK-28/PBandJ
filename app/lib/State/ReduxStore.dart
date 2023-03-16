@@ -17,7 +17,7 @@ class AppState {
   AppState(this.search, this.platforms, this.isRestricted);
 
   static AppState initialState() {
-    return AppState("", [], false);
+    return AppState("", ["PlayStation","Xbox","Nintendo","Sega","PC"], false);
   }
 }
 
@@ -25,14 +25,10 @@ AppState reducer(AppState prevState, action) {
   switch(action.action) {
     case act.Actions.UpdateSearch:
       return AppState(action.data, prevState.platforms, prevState.isRestricted);
-    case act.Actions.AddPlatform:
+    case act.Actions.UpdatePlatform:
       var platforms = List<String>.from(prevState.platforms);
-      platforms.add(action.data);
+      (platforms.contains(action.data))? platforms.remove(action.data): platforms.add(action.data);
       return AppState(prevState.search, platforms, prevState.isRestricted);
-    case act.Actions.RemovePlatform:
-      var platforms = List<String>.from(prevState.platforms);
-      platforms.remove(action.data);
-      return AppState(prevState.search, prevState.platforms, prevState.isRestricted);
     case act.Actions.ToggleAgeRestriction:
       return AppState(prevState.search, prevState.platforms, !prevState.isRestricted);
     default:

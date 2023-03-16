@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:app/data/data.dart';
 import 'package:http/http.dart' as http;
 
+//TODO: remove after migrating all data to remote
 List<Game> gamesParser() {
   return List<Game>.from(
     json.decode(jsonString).map((game) => Game.fromJson(game))
@@ -32,15 +33,15 @@ class GameApiParser {
     var filter = "(";
 
     if(platforms.contains("PC")) {
-      filter += "(platforms.category = (4,6))";
-      if(platforms.length > 1) {
-        filter += " | ";
-      }
+      filter += "(platforms.category = (4,6)) | ";
     }
     List<String> temp = List.of(platforms);
     temp.remove("PC");
     if(temp.isNotEmpty) {
         filter += "(platforms.platform_family.name = (\"${temp.join("\", \"")}\"))";
+    } else {
+      var removeAll = ["PlayStation","Xbox","Nintendo","Sega", "Linux"].join("\", \"");
+       filter += "(platforms.platform_family.name != (\"$removeAll\"))";
     }
     filter += ")";
     return filter;
@@ -68,9 +69,7 @@ class GameApiParser {
     }
 
     //filters platforms that users can filter by
-    if(platforms.isNotEmpty) {
-      filter.add(filterPlatform(platforms));
-    }
+    filter.add(filterPlatform(platforms));
 
     return filter;
   }
