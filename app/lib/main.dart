@@ -19,20 +19,6 @@ void main() {
   runApp(StoreProvider(store: store, child: MyApp()));
 }
 
-
-
-bool userAuth() {
-  bool auth = false;
-  // authenticate().then((bool flag) {
-  //   auth = true;
-  //   print(auth);
-  // }).catchError((e) {
-  //   return false;
-  // });
-  // print(auth);
-  return auth;
-}
-
 class MyApp extends StatelessWidget {
   //const MyApp({super.key}); **ask andrew about this
   bool auth = false; 

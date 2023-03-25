@@ -156,7 +156,6 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                         child: Text("Logout"),
                         onPressed: () {
                           signOut();
-                          //Navigator.pop(context);
                         },
                       )
                     ],
