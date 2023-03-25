@@ -11,25 +11,54 @@ import './models/GameModel.dart';
 import './MainScaffold.dart';
 import './auth/LoginPage.dart';
 
-void initializeFirebase() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-}
-
 void main() {
-  initializeFirebase();
-
   final store = Store<AppState>(
     reducer,
     initialState: AppState.initialState(),
   );
-  runApp(StoreProvider(store: store, child: const MyApp()));
+  runApp(StoreProvider(store: store, child: MyApp()));
+}
+
+
+
+bool userAuth() {
+  bool auth = false;
+  // authenticate().then((bool flag) {
+  //   auth = true;
+  //   print(auth);
+  // }).catchError((e) {
+  //   return false;
+  // });
+  // print(auth);
+  return auth;
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  //const MyApp({super.key}); **ask andrew about this
+  bool auth = false; 
 
+  Future<void> authenticate() async {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    FirebaseAuth.instance
+    .authStateChanges()
+    .listen((User? user) {
+        if (user == null) {
+            print('User is currently signed out!');
+        } else {
+            print('User is signed in!');
+            auth = true;
+        }
+    });
+  }
+
+  bool getAuth() {
+    authenticate();
+    print(auth);
+    return auth;
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -37,8 +66,7 @@ class MyApp extends StatelessWidget {
       create: (context) => GameModel(),
         child: MaterialApp(
           title: 'Flutter Demo',
-          home: LoginPage(),
-          // MainScaffold(),
+          home: getAuth() ? MainScaffold() : LoginPage(),
         ),
     );
   }

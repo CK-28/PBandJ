@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import '../firebase_options.dart';
 
 import './RegisterPage.dart';
+import '../MainScaffold.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPage extends State<LoginPage> {
-    void login() async {
+    void login(BuildContext context) async {
         await Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform,
         );
@@ -22,6 +23,9 @@ class _LoginPage extends State<LoginPage> {
                 email: "email@emailaddress.com",
                 password: "password"
             );
+            
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+            builder: (context) => MainScaffold()), (Route<dynamic> route) => false);
         } on FirebaseAuthException catch (e) {
             if (e.code == 'user-not-found') {
                 print('No user found for that email.');
@@ -48,7 +52,7 @@ class _LoginPage extends State<LoginPage> {
                     ElevatedButton(
                         child: Text("Login"),
                         onPressed: () {
-                            login();
+                            login(context);
                         }
                     ),
                     ElevatedButton(
