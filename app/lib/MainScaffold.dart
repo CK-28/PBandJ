@@ -1,7 +1,12 @@
 import 'package:app/SearchPage/SearchPage.dart';
 import 'package:flutter/material.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '../firebase_options.dart';
+
 import './home/HomePage.dart';
+import './auth/LoginPage.dart';
 
 class MainScaffold extends StatefulWidget {
   @override
@@ -10,6 +15,24 @@ class MainScaffold extends StatefulWidget {
 
 class _BottomTabBarScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
+  void signOut() async {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    try {
+        await FirebaseAuth.instance.signOut();
+        
+        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+            builder: (context) => LoginPage()), (Route<dynamic> route) => false);
+    } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+            print('No user found for that email.');
+        } else if (e.code == 'wrong-password') {
+            print('Wrong password provided for that user.');
+        }
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -132,7 +155,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                       ElevatedButton(
                         child: Text("Logout"),
                         onPressed: () {
-                          Navigator.pop(context);
+                          signOut();
                         },
                       )
                     ],

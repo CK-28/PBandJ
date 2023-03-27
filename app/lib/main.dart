@@ -3,22 +3,48 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import './models/GameModel.dart';
 import './MainScaffold.dart';
+import './auth/LoginPage.dart';
 
 void main() {
-
   final store = Store<AppState>(
     reducer,
     initialState: AppState.initialState(),
   );
-
-  runApp(StoreProvider(store: store, child: const MyApp()));
+  runApp(StoreProvider(store: store, child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  //const MyApp({super.key}); **ask andrew about this
+  bool auth = false; 
 
+  Future<void> authenticate() async {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    FirebaseAuth.instance
+    .authStateChanges()
+    .listen((User? user) {
+        if (user == null) {
+            print('User is currently signed out!');
+        } else {
+            print('User is signed in!');
+            auth = true;
+        }
+    });
+  }
+
+  bool getAuth() {
+    authenticate();
+    print(auth);
+    return auth;
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -26,19 +52,7 @@ class MyApp extends StatelessWidget {
       create: (context) => GameModel(),
         child: MaterialApp(
           title: 'Flutter Demo',
-          theme: ThemeData(
-            // This is the theme of your application.
-            //
-            // Try running your application with "flutter run". You'll see the
-            // application has a blue toolbar. Then, without quitting the app, try
-            // changing the primarySwatch below to Colors.green and then invoke
-            // "hot reload" (press "r" in the console where you ran "flutter run",
-            // or simply save your changes to "hot reload" in a Flutter IDE).
-            // Notice that the counter didn't reset back to zero; the application
-            // is not restarted.
-            primarySwatch: Colors.blue,
-          ),
-          home: MainScaffold(),
+          home: getAuth() ? MainScaffold() : LoginPage(),
         ),
     );
   }
