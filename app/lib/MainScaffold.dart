@@ -15,6 +15,7 @@ class MainScaffold extends StatefulWidget {
 
 class _BottomTabBarScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
+
   void signOut() async {
     await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
@@ -57,7 +58,17 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: _buildAppBar(),
+      resizeToAvoidBottomInset: false,
+      body: _loadContent(),
+      endDrawer: _buildDrawer(),
+      bottomNavigationBar: _buildNavBar()
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar() {
+    return (
+      AppBar(
         backgroundColor: Color(0xFF875632),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -75,10 +86,37 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
             );
           })
         ],
-      ),
-      resizeToAvoidBottomInset: false,
-      body: _loadContent(),
-      endDrawer: Drawer(
+      )
+    );
+  }
+
+  Widget _buildNavBar() {
+    return (
+      BottomNavigationBar(
+        backgroundColor: Color(0xFFEC4686),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Browse",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_rounded),
+            label: "Profile",
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        onTap: _onItemTapped,
+      )
+    );
+  }
+
+  Widget _buildDrawer() {
+    return (Drawer(
         // color: Color(0xFF875632),
         child: Column(
           // Important: Remove any padding from the ListView
@@ -144,46 +182,27 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
               ],
             ),
             Container(
-                child: Padding(
+              child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Divider(),
-                      ElevatedButton(
-                        child: Text("Logout"),
-                        onPressed: () {
-                          signOut();
-                        },
-                      )
-                    ],
-                  )),
-            )),
+                alignment: FractionalOffset.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Divider(),
+                    ElevatedButton(
+                      child: Text("Logout"),
+                      onPressed: () {
+                        signOut();
+                      },
+                    )
+                  ],
+                )),
+              )
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFFEC4686),
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Browse",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_rounded),
-            label: "Profile",
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-      ),
+      )
     );
   }
 }
