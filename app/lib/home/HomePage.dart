@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     return Container(
       color: Color(0xFFF8D5BC),
       child: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.all(10),
         children: [
             GameGrid(
                 heading: "Playing",
