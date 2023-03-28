@@ -122,7 +122,7 @@ class _GamePage extends State<GamePage>{
                     "https://images.igdb.com/igdb/image/upload/t_1080p/nocover.png":
                     thisGame.getImageFromId("1080p")),
                       width: 135,
-                  )       
+                  )
                 )
               ),
               Expanded(

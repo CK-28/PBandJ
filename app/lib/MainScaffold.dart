@@ -7,6 +7,7 @@ import '../firebase_options.dart';
 
 import './home/HomePage.dart';
 import './auth/LoginPage.dart';
+import './AccountPage/AccountPage.dart';
 
 class MainScaffold extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
       case 1:
         return (SearchPage());
       case 2:
-        return (Text("Profile page"));
+        return (AccountPage());
       default:
         return (Text("Something has gone very wrong"));
     }
