@@ -116,80 +116,75 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
   }
 
   Widget _buildDrawer() {
-    return (Drawer(
-        // color: Color(0xFF875632),
-        child: Column(
+    return (
+      Drawer(
+        child: Container(
+          color: Color(0xFF875632),
+          child: ListView(
           // Important: Remove any padding from the ListView
-          children: [
-            Column(
-              children: [
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  child: const DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF875632),
+          //color: Color(0xFF875632),
+            children: [
+              Container(
+                height: 60,
+                width: double.infinity,
+                color: Color(0xFF875632),
+                child: Center(
+                  child: Text("Settings", 
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20)),
+                )
+              ),
+              Container(
+                height: 1000,
+                color: Colors.white,
+                child:Column(
+                  children: [
+                    ListTile(
+                      trailing: Icon(Icons.switch_left),
+                      title: const Text('Light/Dark Mode'),
+                      onTap: () {
+                        // Update the state of the app
+                        // ...
+                        // Then close the drawer
+                        Navigator.pop(context);
+                      },
                     ),
-                    child: Text('Settings'),
-                  ),
-                ),
-                ListTile(
-                  trailing: Icon(Icons.switch_left),
-                  title: const Text('Light/Dark Mode'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Account'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Notifications'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Platform'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Age Rating'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-              ],
-            ),
-            Container(
-              child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Divider(),
+                    ListTile(
+                      title: const Text('Account'),
+                      onTap: () {
+                        // Update the state of the app
+                        // ...
+                        // Then close the drawer
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text('Notifications'),
+                      onTap: () {
+                        // Update the state of the app
+                        // ...
+                        // Then close the drawer
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text('Platform'),
+                      onTap: () {
+                        // Update the state of the app
+                        // ...
+                        // Then close the drawer
+                        Navigator.pop(context);
+                      },
+                    ),
+                    ListTile(
+                      title: const Text('Age Rating'),
+                      onTap: () {
+                        // Update the state of the app
+                        // ...
+                        // Then close the drawer
+                        Navigator.pop(context);
+                      },
+                    ),
                     ElevatedButton(
                       child: Text("Logout"),
                       onPressed: () {
@@ -197,11 +192,11 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                       },
                     )
                   ],
-                )),
-              )
-            ),
-          ],
-        ),
+                ),
+              ),
+            ],
+          ),
+        )
       )
     );
   }

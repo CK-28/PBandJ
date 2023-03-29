@@ -154,13 +154,13 @@ class _GamePage extends State<GamePage>{
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             child: Text("Description", style: TextStyle(
               fontSize: 18
             ))
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Container( // needs to be an expanded
               height: 400,
               width: 275,
@@ -177,7 +177,8 @@ class _GamePage extends State<GamePage>{
                 ]
               ),
               padding: EdgeInsets.all(10),
-              child: Text(thisGame.summary)
+              child: SingleChildScrollView(
+                child: Text(thisGame.summary))
             )
           ),
         ]
@@ -187,70 +188,72 @@ class _GamePage extends State<GamePage>{
 
   Widget _buildRatings(Game thisGame) {
     var stringRating = (thisGame.rating != null) ? thisGame.rating!.toStringAsFixed(2): "N/A";
-
+    
     return (
-      Padding(
-        padding: EdgeInsets.only(top: 40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Color(0xFFCE9164),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    spreadRadius: 0.5,
-                    blurRadius: 5,
-                    offset: const Offset(0, 5),
-                  ),
-                ]
+      Expanded(
+        child: Padding(
+          padding: EdgeInsets.only(top: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Color(0xFFCE9164),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      spreadRadius: 0.5,
+                      blurRadius: 5,
+                      offset: const Offset(0, 5),
+                    ),
+                  ]
+                ),
+                padding: EdgeInsets.all(5),
+                width: 100,
+                height: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Review Score:", textAlign: TextAlign.center),
+                    Text(stringRating, textAlign: TextAlign.center, style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                    ))
+                  ]
+                ),
               ),
-              padding: EdgeInsets.all(5),
-              width: 100,
-              height: 100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Review Score:", textAlign: TextAlign.center),
-                  Text(stringRating, textAlign: TextAlign.center, style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold
-                  ))
-                ]
+              SizedBox(height:30),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  color: Color(0xFFCE9164),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      spreadRadius: 0.5,
+                      blurRadius: 5,
+                      offset: const Offset(0, 5),
+                    ),
+                  ]
+                ),                              
+                padding: const EdgeInsets.all(5),
+                width: 100,
+                height: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Age Rating:", textAlign: TextAlign.center),
+                    Text(thisGame.stringAgeRating(), textAlign: TextAlign.center, style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                    ))
+                  ]
+                ),
               ),
-            ),
-            SizedBox(height:30),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-                color: Color(0xFFCE9164),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    spreadRadius: 0.5,
-                    blurRadius: 5,
-                    offset: const Offset(0, 5),
-                  ),
-                ]
-              ),                              
-              padding: const EdgeInsets.all(5),
-              width: 100,
-              height: 100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Age Rating:", textAlign: TextAlign.center),
-                  Text(thisGame.stringAgeRating(), textAlign: TextAlign.center, style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold
-                  ))
-                ]
-              ),
-            ),              
-          ],
-        )
+            ],
+          )
+        ),
       )
     );
   }
