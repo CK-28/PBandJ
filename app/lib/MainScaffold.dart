@@ -116,23 +116,24 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
   }
 
   Widget _buildDrawer() {
-    return (Drawer(
+    return (
+      Drawer(
         // color: Color(0xFF875632),
-        child: Column(
+        child: ListView(
           // Important: Remove any padding from the ListView
           children: [
+            Container(
+              height: 60,
+              width: double.infinity,
+              color: Color(0xFF875632),
+              child: Center(
+                child: Text("Settings", 
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20)),
+              )
+            ),
             Column(
               children: [
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  child: const DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF875632),
-                    ),
-                    child: Text('Settings'),
-                  ),
-                ),
                 ListTile(
                   trailing: Icon(Icons.switch_left),
                   title: const Text('Light/Dark Mode'),
