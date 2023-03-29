@@ -177,7 +177,8 @@ class _GamePage extends State<GamePage>{
                 ]
               ),
               padding: EdgeInsets.all(10),
-              child: Text(thisGame.summary)
+              child: SingleChildScrollView(
+                child: Text(thisGame.summary))
             )
           ),
         ]
