@@ -1,5 +1,7 @@
 import 'package:app/SearchPage/SearchPage.dart';
 import 'package:flutter/material.dart';
+import 'package:app/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 import './home/HomePage.dart';
 
@@ -35,7 +37,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF875632),
+        //backgroundColor: Color(0xFF875632),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
@@ -67,8 +69,8 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                   width: double.infinity,
                   child: const DrawerHeader(
                     decoration: BoxDecoration(
-                      color: Color(0xFF875632),
-                    ),
+                        /*color: Color(0xFF875632),*/
+                        ),
                     child: Text('Settings'),
                   ),
                 ),
@@ -76,28 +78,8 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                   trailing: Icon(Icons.switch_left),
                   title: const Text('Light/Dark Mode'),
                   onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Account'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Notifications'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
+                    Provider.of<ThemeProvider>(context, listen: false)
+                        .toggleTheme();
                   },
                 ),
                 ListTile(
@@ -142,7 +124,7 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFFEC4686),
+        /*backgroundColor: Color(0xFFEC4686),*/
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

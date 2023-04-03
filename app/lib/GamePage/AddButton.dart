@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:app/theme/theme_provider.dart';
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -132,11 +134,12 @@ class _ExpandableFabState extends State<ExpandableFab>
           curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
           duration: const Duration(milliseconds: 250),
           child: FloatingActionButton(
-            onPressed: _toggle,
-            child: const Icon(Icons.add),
-            backgroundColor: Color(0xFF9CEAEF),
-            foregroundColor: Colors.black
-          ),
+              onPressed: _toggle,
+              child: const Icon(Icons.add),
+              backgroundColor: Provider.of<ThemeProvider>(context)
+                  .themeData
+                  .primaryColorLight,
+              foregroundColor: Colors.black),
         ),
       ),
     );
@@ -162,7 +165,7 @@ class ActionButton extends StatelessWidget {
       child: label,
       height: 30,
       minWidth: 90,
-      color: Color(0xFF9CEAEF),
+      color: Provider.of<ThemeProvider>(context).themeData.primaryColorLight,
     );
   }
 }
