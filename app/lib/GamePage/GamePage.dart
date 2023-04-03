@@ -40,7 +40,9 @@ class _GamePage extends State<GamePage>{
         distance: 50.0,
         children: [
           ActionButton(
-            onPressed: () => _showAction(),
+            onPressed: () => _showAction(), // make addToCollection(String collection)
+            // this is where add document to database
+            // db.collection(users).doc(auth.user.id).collection("playing").add(thisGame.rawString) or someting
             label: const Text("Playing"),
           ),
           ActionButton(

@@ -16,10 +16,22 @@ class _RegisterPage extends State<RegisterPage> {
             options: DefaultFirebaseOptions.currentPlatform,
         );
 
+        // Create a new user with a first and last name
+        final user = <String, dynamic>{
+          "username": "myUsername",
+        };
+
         try {
             final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                email: "email12@emailAddress.com",
+                email: "email13@emailAddress.com",
                 password: "password",
+            );
+
+            // Initialize database instance
+            db = FirebaseFirestore.instance;
+            // Add a new document with a generated ID
+            db.collection("users").add(user).then((DocumentReference doc) =>
+              print('DocumentSnapshot added with ID: ${doc.id}')
             );
         } on FirebaseAuthException catch (e) {
             if (e.code == 'weak-password') {
@@ -88,15 +100,15 @@ class _RegisterPage extends State<RegisterPage> {
                           ),
                         ),
                         SizedBox(
-                              width: width/3,
-                              height: height/20,
-                              child:
-                                ElevatedButton(
-                                    child: Text("Register"),
-                                    onPressed: () {
-                                        createAccount();
-                                    }
-                                )
+                          width: width/3,
+                          height: height/20,
+                          child:
+                            ElevatedButton(
+                                child: Text("Register"),
+                                onPressed: () {
+                                    createAccount();
+                                }
+                            )
                         ),
                     ]
                 )             
