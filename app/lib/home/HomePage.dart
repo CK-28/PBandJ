@@ -35,13 +35,16 @@ class HomePage extends StatelessWidget {
     FirebaseAuth auth = FirebaseAuth.instance;
     var currentUser = auth.currentUser;
     if (currentUser != null) {
-        QuerySnapshot querySnapshot = await db.collection("users").doc(currentUser.uid).collection(list).get();
+      Stream collectionStream = FirebaseFirestore.instance.collection('users').doc(currentUser.uid).collection(list).snapshots();
 
-        Map<String, dynamic> result ;
-        querySnapshot.docs.forEach((doc) {
-          print(doc);
-          // result.add(Game.fromJson(doc));
-        });
+      
+        // QuerySnapshot querySnapshot = await db.collection("users").doc(currentUser.uid).collection(list).get();
+
+        // Map<String, dynamic> result ;
+        // querySnapshot.docs.forEach((doc) {
+        //   print(doc);
+        //   // result.add(Game.fromJson(doc));
+        // });
     }     
     return result;
   }
@@ -69,10 +72,10 @@ class HomePage extends StatelessWidget {
                 heading: "Ongoing",
                 games: games,
             ),
-            ElevatedButton(onPressed: () {
-               getList("playing");
-            }, 
-            child: Text("ClickMe"))
+            // ElevatedButton(onPressed: () {
+            //    getList("playing");
+            // }, 
+            // child: Text("ClickMe"))
         ]
       )
     );
