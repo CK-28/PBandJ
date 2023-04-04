@@ -56,16 +56,20 @@ class _GamePage extends State<GamePage>{
         distance: 50.0,
         children: [
           ActionButton(
-            onPressed: () => _addToList(thisGame, "playing"), 
-            label: const Text("Playing"),
+            onPressed: () => _addToList(thisGame, "completed"),
+            label: const Text("Completed"),
+          ),
+          ActionButton(
+            onPressed: () => _addToList(thisGame, "ongoing"),
+            label: const Text("Ongoing"),
           ),
           ActionButton(
             onPressed: () => _addToList(thisGame, "backlog"),
             label: const Text("Backlog"),
           ),
           ActionButton(
-            onPressed: () => _addToList(thisGame, "ongoing"),
-            label: const Text("Ongoing"),
+            onPressed: () => _addToList(thisGame, "playing"), 
+            label: const Text("Playing"),
           ),
         ],
       ),

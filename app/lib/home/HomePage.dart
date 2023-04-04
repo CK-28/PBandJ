@@ -3,6 +3,11 @@ import '../data/Game.dart';
 import '../data/GamesParser.dart';
 import 'GameGrid.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '../firebase_options.dart';
+
 class HomePage extends StatelessWidget {
   List<Game> games = gamesParser();
 
@@ -17,6 +22,33 @@ class HomePage extends StatelessWidget {
   // onSnapshot to live update
   // userQuery = .get, which gets all user collection data, then  gets data for each thing and create new list
   // run games through gamesParser
+
+  Future<List<Game>> getList(String list) async {
+    List<Game> result = [];
+
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+    // Initialize database instance
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    FirebaseAuth auth = FirebaseAuth.instance;
+    var currentUser = auth.currentUser;
+    if (currentUser != null) {
+        QuerySnapshot querySnapshot = await db.collection("users").doc(currentUser.uid).collection(list).get();
+
+        Map<String, dynamic> result ;
+        querySnapshot.docs.forEach((doc) {
+          print(doc);
+          // result.add(Game.fromJson(doc));
+        });
+    }     
+    return result;
+  }
+
+  void buildList() {
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +69,10 @@ class HomePage extends StatelessWidget {
                 heading: "Ongoing",
                 games: games,
             ),
+            ElevatedButton(onPressed: () {
+               getList("playing");
+            }, 
+            child: Text("ClickMe"))
         ]
       )
     );

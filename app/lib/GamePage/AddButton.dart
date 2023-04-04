@@ -161,7 +161,7 @@ class ActionButton extends StatelessWidget {
       onPressed: onPressed,
       child: label,
       height: 30,
-      minWidth: 90,
+      minWidth: 100,
       color: Color(0xFF9CEAEF),
     );
   }
