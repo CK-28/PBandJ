@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../firebase_options.dart';
 
 
@@ -28,7 +31,7 @@ class _RegisterPage extends State<RegisterPage> {
             );
 
             // Initialize database instance
-            db = FirebaseFirestore.instance;
+             FirebaseFirestore db = FirebaseFirestore.instance;
             // Add a new document with a generated ID
             db.collection("users").add(user).then((DocumentReference doc) =>
               print('DocumentSnapshot added with ID: ${doc.id}')
