@@ -13,15 +13,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPage extends State<LoginPage> {
-    void login(BuildContext context) async {
+    void login(BuildContext context, email, password) async {
         await Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform,
         );
+        print(email);
+        print(password);
 
         try {
             final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                email: "email@emailaddress.com",
-                password: "password"
+                email: email,
+                password: password
             );
             
             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
@@ -39,6 +41,17 @@ class _LoginPage extends State<LoginPage> {
     Widget build(BuildContext context) {
         double width = MediaQuery.of(context).size.width;
         double height = MediaQuery.of(context).size.height;
+
+        final emailController = TextEditingController();
+        final passwordController = TextEditingController();
+
+        @override
+        void dispose() {
+          // Clean up the controller when the widget is disposed.
+          emailController.dispose();
+          passwordController.dispose();
+          super.dispose();
+        }
 
         return Scaffold(
             appBar: AppBar(
@@ -66,15 +79,18 @@ class _LoginPage extends State<LoginPage> {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: width/5, vertical: 8),
                           child: TextField(
+                            controller: emailController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'Username:',
+                              hintText: 'Email:',
                             ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: width/5, vertical: 8),
                           child: TextField(
+                            controller: passwordController,
+                            onSubmitted: (_) => login(context, emailController.text, passwordController.text),
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Password:',
@@ -89,7 +105,7 @@ class _LoginPage extends State<LoginPage> {
                                 ElevatedButton(
                                     child: Text("Login"),
                                     onPressed: () {
-                                        login(context);
+                                        login(context, emailController.text, passwordController.text);
                                     }
                                 ),
                         ),

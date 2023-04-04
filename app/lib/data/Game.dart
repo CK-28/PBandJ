@@ -11,6 +11,7 @@ class Game {
   final List<Genre> genres;
   final List<Company> companies;
   final List<Platform> platforms;
+  final Map<String, dynamic> rawString;
 
   Game({
     required this.id,
@@ -24,6 +25,7 @@ class Game {
     required this.genres,
     required this.companies,
     required this.platforms,
+    required this.rawString,
   });
 
 
@@ -117,9 +119,9 @@ class Game {
         genres: genres,
         companies: companies,
         platforms: platforms,
+        rawString: json, // in theory this is what we need to pass to firestore
     );
   }
-
 }
 
 class Genre {

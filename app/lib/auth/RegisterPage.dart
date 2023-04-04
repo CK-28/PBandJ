@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../firebase_options.dart';
 
 
@@ -11,15 +14,27 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPage extends State<RegisterPage> {
-    void createAccount() async {
+    void createAccount(username, email, password) async {
         await Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform,
         );
 
+        // Create a new user with a first and last name
+        final user = <String, dynamic>{
+          "username": username,
+        };
+
         try {
             final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                email: "email12@emailAddress.com",
-                password: "password",
+                email: email,
+                password: password,
+            );
+
+            // Initialize database instance
+             FirebaseFirestore db = FirebaseFirestore.instance;
+            // Add a new document with a generated ID
+            db.collection("users").add(user).then((DocumentReference doc) =>
+              print('DocumentSnapshot added with ID: ${doc.id}')
             );
         } on FirebaseAuthException catch (e) {
             if (e.code == 'weak-password') {
@@ -36,6 +51,19 @@ class _RegisterPage extends State<RegisterPage> {
     Widget build(BuildContext context) {
         double width = MediaQuery.of(context).size.width;
         double height = MediaQuery.of(context).size.height;
+
+        final userController = TextEditingController();
+        final emailController = TextEditingController();
+        final passwordController = TextEditingController();
+
+        @override
+        void dispose() {
+          // Clean up the controller when the widget is disposed.
+          userController.dispose();
+          emailController.dispose();
+          passwordController.dispose();
+          super.dispose();
+        }
         
         return Scaffold(
             appBar: AppBar(
@@ -63,6 +91,7 @@ class _RegisterPage extends State<RegisterPage> {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: width/5, vertical: 8),
                           child: TextField(
+                            controller: userController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Username:',
@@ -72,6 +101,7 @@ class _RegisterPage extends State<RegisterPage> {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: width/5, vertical: 8),
                           child: TextField(
+                            controller: passwordController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Password:',
@@ -81,6 +111,8 @@ class _RegisterPage extends State<RegisterPage> {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: width/5, vertical: 8),
                           child: TextField(
+                            controller: emailController,
+                            onSubmitted: (_) => createAccount(userController.text, emailController.text, passwordController.text),
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Email:',
@@ -88,15 +120,15 @@ class _RegisterPage extends State<RegisterPage> {
                           ),
                         ),
                         SizedBox(
-                              width: width/3,
-                              height: height/20,
-                              child:
-                                ElevatedButton(
-                                    child: Text("Register"),
-                                    onPressed: () {
-                                        createAccount();
-                                    }
-                                )
+                          width: width/3,
+                          height: height/20,
+                          child:
+                            ElevatedButton(
+                                child: Text("Register"),
+                                onPressed: () {
+                                    createAccount(userController.text, emailController.text, passwordController.text);
+                                }
+                            )
                         ),
                     ]
                 )             

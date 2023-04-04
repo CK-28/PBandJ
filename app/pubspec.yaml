@@ -44,6 +44,7 @@ dependencies:
   redux: ^5.0.0
   firebase_core: ^2.8.0
   firebase_auth: ^4.2.2
+  cloud_firestore: ^4.5.0
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import '../data/Game.dart';
 import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '../firebase_options.dart';
 
 import './AddButton.dart';
 
@@ -19,8 +23,22 @@ class GamePage extends StatefulWidget {
 class _GamePage extends State<GamePage> {
   bool addButVis = false;
 
-  void _showAction() {}
+  void _addToList(Game game, String list) async {
+      await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+      );
 
+      // Initialize database instance
+      FirebaseFirestore db = FirebaseFirestore.instance;
+      FirebaseAuth auth = FirebaseAuth.instance;
+      var currentUser = auth.currentUser;
+      if (currentUser != null) {
+        db.collection("users").doc(currentUser.uid).collection(list).add(game.rawString).then((DocumentReference doc) =>
+          print('DocumentSnapshot added with ID: ${doc.id}')
+        );
+      }      
+  }
+  
   @override
   Widget build(BuildContext context) {
     Game thisGame = widget.game;
@@ -36,27 +54,34 @@ class _GamePage extends State<GamePage> {
             ),
           ),
         ),
-        body: _buildGamePage(thisGame),
-        floatingActionButton: ExpandableFab(
-          distance: 50.0,
-          children: [
-            ActionButton(
-              onPressed: () => _showAction(),
-              label: const Text("Playing"),
-            ),
-            ActionButton(
-              onPressed: () => _showAction(),
-              label: const Text("Backlog"),
-            ),
-            ActionButton(
-              onPressed: () => _showAction(),
-              label: const Text("Ongoing"),
-            ),
-          ],
-        ),
-        bottomNavigationBar: Container(
-          height: 30, /*color: Color(0xFFEC4686)*/
-        ));
+      ),
+      body: _buildGamePage(thisGame),
+      floatingActionButton: ExpandableFab(
+        distance: 50.0,
+        children: [
+          ActionButton(
+            onPressed: () => _addToList(thisGame, "completed"),
+            label: const Text("Completed"),
+          ),
+          ActionButton(
+            onPressed: () => _addToList(thisGame, "ongoing"),
+            label: const Text("Ongoing"),
+          ),
+          ActionButton(
+            onPressed: () => _addToList(thisGame, "backlog"),
+            label: const Text("Backlog"),
+          ),
+          ActionButton(
+            onPressed: () => _addToList(thisGame, "playing"), 
+            label: const Text("Playing"),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        height: 30,
+        color: Color(0xFFEC4686)
+      )
+    );
   }
 
   Widget _buildGamePage(Game thisGame) {
