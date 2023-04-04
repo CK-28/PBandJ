@@ -54,7 +54,6 @@ class _GamePage extends State<GamePage> {
             ),
           ),
         ),
-      ),
       body: _buildGamePage(thisGame),
       floatingActionButton: ExpandableFab(
         distance: 50.0,
