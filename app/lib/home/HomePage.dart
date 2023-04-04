@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF8D5BC),
+        //color: Color(0xFFF8D5BC),
       child: ListView(
         padding: const EdgeInsets.all(10),
         children: [

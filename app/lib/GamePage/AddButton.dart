@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:app/themes/theme_provider.dart';
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -77,7 +79,7 @@ class _ExpandableFabState extends State<ExpandableFab>
       height: 56.0,
       child: Center(
         child: Material(
-          color: Colors.white,
+          color: Provider.of<ThemeProvider>(context).themeData.cardColor,
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
           elevation: 4.0,
@@ -132,11 +134,12 @@ class _ExpandableFabState extends State<ExpandableFab>
           curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
           duration: const Duration(milliseconds: 250),
           child: FloatingActionButton(
-            onPressed: _toggle,
-            child: const Icon(Icons.add),
-            backgroundColor: Color(0xFF9CEAEF),
-            foregroundColor: Colors.black
-          ),
+              onPressed: _toggle,
+              child: const Icon(Icons.add),
+              backgroundColor: Provider.of<ThemeProvider>(context)
+                  .themeData
+                  .primaryColorLight,
+              foregroundColor: Colors.black),
         ),
       ),
     );
@@ -161,8 +164,8 @@ class ActionButton extends StatelessWidget {
       onPressed: onPressed,
       child: label,
       height: 30,
-      minWidth: 100,
-      color: Color(0xFF9CEAEF),
+      minWidth: 90,
+      color: Provider.of<ThemeProvider>(context).themeData.primaryColorLight,
     );
   }
 }
