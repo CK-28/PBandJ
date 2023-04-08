@@ -16,10 +16,19 @@ class SearchFieldWidget extends StatefulWidget {
 class SearchFieldState extends State<SearchFieldWidget> {
   bool _showFilter = false;
 
+  var controller;
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     List<String> platforms = ["PlayStation", "Xbox", "Nintendo", "Sega", "PC"];
-    final controller = TextEditingController(
+    controller = TextEditingController(
         text: StoreProvider.of<AppState>(context).state.search);
 
     return StoreConnector<AppState, Function(DataAction action)>(
