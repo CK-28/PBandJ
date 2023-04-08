@@ -6,6 +6,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../firebase_options.dart';
+import '../MainScaffold.dart';
+
 
 
 class RegisterPage extends StatefulWidget {
@@ -14,6 +16,43 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPage extends State<RegisterPage> {
+    final userController = TextEditingController();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
+    @override
+    void dispose() {
+      // Clean up the controller when the widget is disposed.
+      userController.dispose();
+      emailController.dispose();
+      passwordController.dispose();
+      super.dispose();
+    }
+
+    void login(BuildContext context, email, password) async {
+        await Firebase.initializeApp(
+            options: DefaultFirebaseOptions.currentPlatform,
+        );
+        print(email);
+        print(password);
+
+        try {
+            final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                email: email,
+                password: password
+            );
+            
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+            builder: (context) => MainScaffold()), (Route<dynamic> route) => false);
+        } on FirebaseAuthException catch (e) {
+            if (e.code == 'user-not-found') {
+                print('No user found for that email.');
+            } else if (e.code == 'wrong-password') {
+                print('Wrong password provided for that user.');
+            }
+        }
+    }
+
     void createAccount(username, email, password) async {
         await Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform,
@@ -45,25 +84,13 @@ class _RegisterPage extends State<RegisterPage> {
         } catch (e) {
             print(e);
         }
+        login(context, email, password);
     }
 
     @override
     Widget build(BuildContext context) {
         double width = MediaQuery.of(context).size.width;
         double height = MediaQuery.of(context).size.height;
-
-        final userController = TextEditingController();
-        final emailController = TextEditingController();
-        final passwordController = TextEditingController();
-
-        @override
-        void dispose() {
-          // Clean up the controller when the widget is disposed.
-          userController.dispose();
-          emailController.dispose();
-          passwordController.dispose();
-          super.dispose();
-        }
         
         return Scaffold(
             appBar: AppBar(
