@@ -13,6 +13,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPage extends State<LoginPage> {
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
+    @override
+    void dispose() {
+      // Clean up the controller when the widget is disposed.
+      emailController.dispose();
+      passwordController.dispose();
+      super.dispose();
+    }
+
     void login(BuildContext context, email, password) async {
         await Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform,
@@ -41,17 +52,6 @@ class _LoginPage extends State<LoginPage> {
     Widget build(BuildContext context) {
         double width = MediaQuery.of(context).size.width;
         double height = MediaQuery.of(context).size.height;
-
-        final emailController = TextEditingController();
-        final passwordController = TextEditingController();
-
-        @override
-        void dispose() {
-          // Clean up the controller when the widget is disposed.
-          emailController.dispose();
-          passwordController.dispose();
-          super.dispose();
-        }
 
         return Scaffold(
             appBar: AppBar(
