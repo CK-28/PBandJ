@@ -120,6 +120,8 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     ));
   }
 
+  bool _ageRestricted = false;
+
   Widget _buildDrawer() {
     return StoreConnector<AppState, Function(DataAction action)>(
       converter: (Store<AppState> store) =>
@@ -156,9 +158,13 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
                             .toggleTheme();
                       },
                     ),
-                    ListTile(
-                      title: const Text('Age Rating'),
-                      onTap: () {
+                    SwitchListTile(
+                      value: _ageRestricted,
+                      title: const Text('Age Restriction'),
+                      onChanged: (bool value) {
+                        setState(() {
+                          _ageRestricted = value;
+                        });
                         callback(
                             DataAction(act.Actions.ToggleAgeRestriction, ""));
                       },
