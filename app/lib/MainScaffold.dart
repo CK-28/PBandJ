@@ -1,8 +1,10 @@
 import 'package:app/SearchPage/SearchPage.dart';
+import 'package:app/State/ReduxStore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import '../firebase_options.dart';
 
 import './home/HomePage.dart';
@@ -11,7 +13,9 @@ import './AccountPage/AccountPage.dart';
 
 import 'package:provider/provider.dart';
 import 'package:app/themes/theme_provider.dart';
-import './themes/light_theme.dart';
+
+import 'package:redux/redux.dart';
+import '../State/Actions.dart' as act;
 
 class MainScaffold extends StatefulWidget {
   @override
@@ -116,67 +120,68 @@ class _BottomTabBarScaffoldState extends State<MainScaffold> {
     ));
   }
 
+  bool _ageRestricted = false;
+
   Widget _buildDrawer() {
-    return (Drawer(
-        child: Container(
-      color: Provider.of<ThemeProvider>(context).themeData.primaryColorDark,
-      child: ListView(
-        // Important: Remove any padding from the ListView
-        //color: Color(0xFF875632),
-        children: [
-          Container(
-              height: 60,
-              width: double.infinity,
-              color: Provider.of<ThemeProvider>(context)
-                  .themeData
-                  .primaryColorDark,
-              child: Center(
-                child: Text("Settings",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20)),
-              )),
-          Container(
-            height: 1000,
-            color: Provider.of<ThemeProvider>(context).themeData.cardColor,
-            child: Column(
-              children: [
-                ListTile(
-                  trailing: Icon(Icons.switch_left),
-                  title: const Text('Light/Dark Mode'),
-                  onTap: () {
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme();
-                  },
+    return StoreConnector<AppState, Function(DataAction action)>(
+      converter: (Store<AppState> store) =>
+          (action) => {store.dispatch(action)},
+      builder: (storeContext, callback) {
+        return (Drawer(
+            child: Container(
+          color: Provider.of<ThemeProvider>(context).themeData.primaryColorDark,
+          child: ListView(
+            // Important: Remove any padding from the ListView
+            //color: Color(0xFF875632),
+            children: [
+              Container(
+                  height: 60,
+                  width: double.infinity,
+                  color: Provider.of<ThemeProvider>(context)
+                      .themeData
+                      .primaryColorDark,
+                  child: Center(
+                    child: Text("Settings",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 20)),
+                  )),
+              Container(
+                height: 1000,
+                color: Provider.of<ThemeProvider>(context).themeData.cardColor,
+                child: Column(
+                  children: [
+                    ListTile(
+                      trailing: Icon(Icons.switch_left),
+                      title: const Text('Light/Dark Mode'),
+                      onTap: () {
+                        Provider.of<ThemeProvider>(context, listen: false)
+                            .toggleTheme();
+                      },
+                    ),
+                    SwitchListTile(
+                      value: _ageRestricted,
+                      title: const Text('Age Restriction'),
+                      onChanged: (bool value) {
+                        setState(() {
+                          _ageRestricted = value;
+                        });
+                        callback(
+                            DataAction(act.Actions.ToggleAgeRestriction, ""));
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text("Logout"),
+                      onPressed: () {
+                        signOut();
+                      },
+                    )
+                  ],
                 ),
-                ListTile(
-                  title: const Text('Platform'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  title: const Text('Age Rating'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
-                ElevatedButton(
-                  child: Text("Logout"),
-                  onPressed: () {
-                    signOut();
-                  },
-                )
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
-    )));
+        )));
+      },
+    );
   }
 }
