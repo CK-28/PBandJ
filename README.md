@@ -8,17 +8,15 @@
 
 [Developer Roles](https://github.com/CK-28/PlayingBacklog-J#developer-roles)
 
-
+<img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/PBJLogo.png"  width="300" height="300">
 
 ## Description
 This is a game collection tracking app that aims to create a perfectly simple and smooth experience to its user. The app allows the user to search for games and add them to one of four lists. These lists are Playing, for in-progress games, backlog, for games to be started, on-going, for multiplayer and other games with no real ending, and completed, for finished games.
 
 *Current Version Number: 1.0*
 
-
-
 ## How To Run
-TBD
+*TBD*
 
 ## App Features
 - Account registration and login using Firebase
@@ -29,8 +27,13 @@ TBD
 - Unique Peanut Butter & Jelly coloured theme to match our acronym!
 - Dark mode for an easier viewing experience
 
-### App Demo Video
-TBD
+### App Image and Demo Video
+<div>
+ <img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/MainPage.jpg" style="width:20%">
+ <img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/SearchPage.png" style="width:20%">
+ <img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/GamePage.jpg" style="width:20%">
+ <img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/ProfilePage.jpg" style="width:20%">
+</div>
 
 ## Developer Roles
  - Crestena Khidhir
