@@ -35,6 +35,8 @@ This is a game collection tracking app that aims to create a perfectly simple an
  <img src="https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/ProfilePage.jpg" style="width:20%">
 </div>
 
+[![Watch the video](https://github.com/CK-28/PlayingBacklog-J/blob/main/Media/LoginPage.jpg)](https://youtube.com/shorts/yMXdztChkfs?feature=share)
+
 ## Developer Roles
  - Crestena Khidhir
  - Alanna Tees
