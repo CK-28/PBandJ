@@ -29,8 +29,8 @@ TBD
 - Unique Peanut Butter & Jelly coloured theme to match our acronym!
 - Dark mode for an easier viewing experience
 
-### Game Overview Video
-[![Watch the video](https://img.youtube.com/vi/pJUpNNwzNqc/maxresdefault.jpg)](https://youtu.be/pJUpNNwzNqc)
+### App Demo Video
+TBD
 
 ## Developer Roles
  - Crestena Khidhir
